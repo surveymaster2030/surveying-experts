@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Play, Camera, Newspaper, BookOpen, ExternalLink, ArrowLeft } from "lucide-react";
+import { getLatestVideos } from "@/lib/youtube";
 
 export const metadata: Metadata = {
   title: "المركز الإعلامي | فيديوهات وصور وأخبار | خبراء المساحة",
@@ -97,16 +98,8 @@ const mediaTypes = [
   { icon: <BookOpen size={22} />, title: "محتوى تعليمي", description: "شروحات تقنية ونصائح عملية وإرشادات لفرق المساحة الميدانية." },
 ];
 
-const placeholderVideos = [
-  { title: "عرض ميداني: eSurvey GNSS RTK", category: "عرض منتج" },
-  { title: "دليل إعداد التوتال ستيشن", category: "كيفية الاستخدام" },
-  { title: "مسح ثلاثي الأبعاد في موقع إنشاء", category: "عمل ميداني" },
-  { title: "سير عمل رسم خرائط الدرون بالسعودية", category: "عمل ميداني" },
-  { title: "عرض GPR للكشف تحت الأرض", category: "عرض منتج" },
-  { title: "معدات المساحة البحرية", category: "حلول متقدمة" },
-];
-
-export default function ArMediaPage() {
+export default async function ArMediaPage() {
+  const videos = await getLatestVideos(6);
   return (
     <>
       {/* Hero */}
@@ -119,16 +112,16 @@ export default function ArMediaPage() {
           <h1 style={{ fontFamily: "var(--font-display)", fontWeight: 700, color: "#fff", fontSize: "clamp(32px,5vw,62px)", lineHeight: 1.05, letterSpacing: "-0.025em", margin: "16px 0 20px", maxWidth: 640 }}>
             خبراء المساحة في الميدان
           </h1>
-          <p style={{ fontFamily: "var(--font-sans)", color: "rgba(255,255,255,0.68)", fontSize: 18, lineHeight: 1.7, maxWidth: 520, margin: "0 0 36px" }}>
+          <p style={{ fontFamily: "var(--font-sans)", color: "#CFE3EC", fontSize: 18, lineHeight: 1.7, maxWidth: 520, margin: "0 0 36px" }}>
             فيديوهات، تصوير ميداني، وتحديثات من فريقنا في أنحاء المملكة العربية السعودية. تابعنا على منصاتنا للبقاء على اطلاع.
           </p>
           <div style={{ display: "flex", flexWrap: "wrap", gap: 10 }}>
             {channels.map((c) => (
               <a key={c.platform} href={c.href} target="_blank" rel="noopener noreferrer"
-                style={{ display: "inline-flex", alignItems: "center", gap: 8, padding: "9px 16px", background: "rgba(255,255,255,0.08)", color: "#fff", fontWeight: 600, fontSize: 13, borderRadius: "var(--radius-md)", border: "1px solid rgba(255,255,255,0.15)", textDecoration: "none" }}>
+                style={{ display: "inline-flex", alignItems: "center", gap: 8, padding: "9px 16px", color: "#fff", fontWeight: 600, fontSize: 13, borderRadius: "var(--radius-md)", border: "1px solid rgba(255,255,255,0.15)", textDecoration: "none" }}>
                 <span style={{ color: c.color }}>{c.icon}</span>
                 {c.platform}
-                <ExternalLink size={11} style={{ opacity: 0.5 }} />
+                <ExternalLink size={11} />
               </a>
             ))}
           </div>
@@ -136,7 +129,7 @@ export default function ArMediaPage() {
       </section>
 
       {/* What We Share */}
-      <section style={{ background: "var(--se-white)", padding: "80px 0" }}>
+      <section style={{ padding: "80px 0" }}>
         <div className="se-container">
           <div style={{ textAlign: "center", marginBottom: 48 }}>
             <Eyebrow>أنواع المحتوى</Eyebrow>
@@ -144,7 +137,7 @@ export default function ArMediaPage() {
           </div>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: 20 }}>
             {mediaTypes.map((m) => (
-              <div key={m.title} style={{ background: "var(--se-gray-50)", border: "1px solid var(--border-subtle)", borderRadius: "var(--radius-xl)", padding: "28px 24px" }}>
+              <div key={m.title} style={{ border: "1px solid var(--border-subtle)", borderRadius: "var(--radius-xl)", padding: "28px 24px" }}>
                 <div style={{ width: 48, height: 48, borderRadius: "var(--radius-md)", background: "var(--se-teal)", color: "#fff", display: "grid", placeItems: "center", marginBottom: 16 }}>
                   {m.icon}
                 </div>
@@ -156,8 +149,8 @@ export default function ArMediaPage() {
         </div>
       </section>
 
-      {/* Video grid */}
-      <section style={{ background: "var(--se-gray-50)", padding: "80px 0" }}>
+      {/* آخر الفيديوهات — مباشرة من يوتيوب RSS */}
+      <section style={{ padding: "80px 0" }}>
         <div className="se-container">
           <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 36, flexWrap: "wrap", gap: 16 }}>
             <div>
@@ -169,45 +162,58 @@ export default function ArMediaPage() {
               <IconYouTube /> مشاهدة الكل <ExternalLink size={12} />
             </a>
           </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: 16 }}>
-            {placeholderVideos.map((v) => (
-              <a key={v.title} href="https://www.youtube.com/@surveyingexperts-sa" target="_blank" rel="noopener noreferrer"
-                style={{ display: "block", borderRadius: "var(--radius-xl)", overflow: "hidden", background: "var(--se-blue-dark)", textDecoration: "none", boxShadow: "var(--shadow-md)" }}>
-                <div style={{ height: 168, background: "linear-gradient(135deg, #1a2b38 0%, #243949 100%)", display: "flex", alignItems: "center", justifyContent: "center", position: "relative" }}>
-                  <div aria-hidden style={{ position: "absolute", inset: 0, backgroundImage: "radial-gradient(circle at 1px 1px, rgba(34,167,168,0.06) 1px, transparent 0)", backgroundSize: "18px 18px" }} />
-                  <div style={{ width: 52, height: 52, borderRadius: "50%", background: "rgba(255,0,0,0.85)", display: "grid", placeItems: "center" }}>
-                    <svg viewBox="0 0 24 24" width="22" height="22" fill="white"><polygon points="5,3 19,12 5,21" /></svg>
-                  </div>
-                </div>
-                <div style={{ padding: "14px 16px" }}>
-                  <div style={{ display: "inline-block", fontFamily: "var(--font-sans)", fontSize: 10, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.1em", color: "var(--se-teal)", marginBottom: 6 }}>{v.category}</div>
-                  <div style={{ fontFamily: "var(--font-sans)", fontWeight: 600, fontSize: 14, color: "#fff", lineHeight: 1.4 }}>{v.title}</div>
-                </div>
+          {videos.length === 0 ? (
+            <div style={{ textAlign: "center", padding: "48px 0" }}>
+              <a href="https://www.youtube.com/@surveyingexperts-sa" target="_blank" rel="noopener noreferrer"
+                style={{ display: "inline-flex", alignItems: "center", gap: 8, padding: "12px 22px", background: "#FF0000", color: "#fff", fontWeight: 700, fontSize: 14, borderRadius: "var(--radius-md)", textDecoration: "none" }}>
+                <IconYouTube /> زيارة قناتنا على يوتيوب <ExternalLink size={12} />
               </a>
-            ))}
-          </div>
+            </div>
+          ) : (
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: 16 }}>
+              {videos.map((v) => (
+                <a key={v.id} href={v.videoUrl} target="_blank" rel="noopener noreferrer"
+                  style={{ display: "block", borderRadius: "var(--radius-xl)", overflow: "hidden", textDecoration: "none", boxShadow: "var(--shadow-md)", border: "1px solid var(--border-subtle)" }}>
+                  <div style={{ position: "relative", paddingTop: "56.25%", background: "#1a2b38", overflow: "hidden" }}>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={v.thumbnailUrl} alt={v.title} style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }} />
+                    <div aria-hidden style={{ position: "absolute", inset: 0, background: "rgba(0,0,0,0.22)", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                      <div style={{ width: 48, height: 48, borderRadius: "50%", background: "rgba(0,0,0,0.6)", display: "grid", placeItems: "center" }}>
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="white"><polygon points="6,3 20,12 6,21" /></svg>
+                      </div>
+                    </div>
+                  </div>
+                  <div style={{ padding: "14px 16px" }}>
+                    <div style={{ fontFamily: "var(--font-sans)", fontSize: 11, color: "var(--text-muted)", marginBottom: 5 }}>
+                      {new Date(v.published).toLocaleDateString("ar-SA", { year: "numeric", month: "long" })}
+                    </div>
+                    <div style={{ fontFamily: "var(--font-sans)", fontWeight: 600, fontSize: 14, color: "var(--text-strong)", lineHeight: 1.4 }}>{v.title}</div>
+                  </div>
+                </a>
+              ))}
+            </div>
+          )}
         </div>
       </section>
 
       {/* Social channels */}
-      <section style={{ background: "var(--se-blue-darker)", padding: "80px 0", position: "relative", overflow: "hidden" }}>
-        <div aria-hidden style={{ position: "absolute", inset: 0, backgroundImage: "linear-gradient(rgba(34,167,168,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(34,167,168,0.04) 1px,transparent 1px)", backgroundSize: "40px 40px" }} />
+      <section style={{ background: "var(--se-blue-dark)", padding: "80px 0", position: "relative", overflow: "hidden" }}>
         <div className="se-container" style={{ position: "relative" }}>
           <div style={{ textAlign: "center", marginBottom: 48 }}>
             <Eyebrow light>وسائل التواصل الاجتماعي</Eyebrow>
             <h2 style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "clamp(1.5rem,3vw,2.1rem)", color: "#fff", margin: "12px 0 10px", letterSpacing: "-0.02em" }}>تابع خبراء المساحة</h2>
-            <p style={{ fontFamily: "var(--font-sans)", fontSize: 15, color: "rgba(255,255,255,0.55)", maxWidth: "50ch", margin: "0 auto" }}>ابقَ على اطلاع بأخبار المعدات، الفيديوهات الميدانية، العروض، والرؤى الاحترافية.</p>
+            <p style={{ fontFamily: "var(--font-sans)", fontSize: 15, color: "#BDD4E2", maxWidth: "50ch", margin: "0 auto" }}>ابقَ على اطلاع بأخبار المعدات، الفيديوهات الميدانية، العروض، والرؤى الاحترافية.</p>
           </div>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: 16 }}>
             {channels.map((c) => (
               <a key={c.platform} href={c.href} target="_blank" rel="noopener noreferrer"
-                style={{ display: "block", background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.12)", borderRadius: "var(--radius-xl)", padding: "28px 22px", textDecoration: "none" }}>
+                style={{ display: "block", border: "1px solid rgba(255,255,255,0.12)", borderRadius: "var(--radius-xl)", padding: "28px 22px", textDecoration: "none" }}>
                 <div style={{ width: 48, height: 48, borderRadius: "var(--radius-md)", background: c.color, color: "#fff", display: "grid", placeItems: "center", marginBottom: 16 }}>
                   {c.icon}
                 </div>
                 <div style={{ fontFamily: "var(--font-sans)", fontWeight: 700, fontSize: 16, color: "#fff", marginBottom: 4 }}>{c.platform}</div>
-                <div style={{ fontFamily: "var(--font-sans)", fontSize: 12, color: "rgba(255,255,255,0.4)", marginBottom: 12 }}>{c.handle}</div>
-                <div style={{ fontFamily: "var(--font-sans)", fontSize: 13, lineHeight: 1.6, color: "rgba(255,255,255,0.6)", marginBottom: 18 }}>{c.description}</div>
+                <div style={{ fontFamily: "var(--font-sans)", fontSize: 12, color: "#A3C3D8", marginBottom: 12 }}>{c.handle}</div>
+                <div style={{ fontFamily: "var(--font-sans)", fontSize: 13, lineHeight: 1.6, color: "#C5DAE6", marginBottom: 18 }}>{c.description}</div>
                 <div style={{ display: "inline-flex", alignItems: "center", gap: 6, fontFamily: "var(--font-sans)", fontSize: 13, fontWeight: 700, color: "var(--se-teal)" }}>
                   {c.cta} <ExternalLink size={12} />
                 </div>
@@ -218,7 +224,7 @@ export default function ArMediaPage() {
       </section>
 
       {/* CTA */}
-      <section style={{ background: "var(--se-white)", padding: "72px 0", textAlign: "center" }}>
+      <section style={{ padding: "72px 0", textAlign: "center" }}>
         <div className="se-container">
           <h2 style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "clamp(1.375rem,2.5vw,1.875rem)", color: "var(--text-strong)", marginBottom: "1rem", letterSpacing: "-0.02em" }}>
             هل تريد رؤية معداتنا في العمل؟
@@ -227,7 +233,7 @@ export default function ArMediaPage() {
             يمكن لفريقنا ترتيب عرض توضيحي أو ربطك بمراجع ميدانية قريبة من مشروعك.
           </p>
           <Link href="/ar/contact"
-            style={{ display: "inline-flex", alignItems: "center", gap: 8, padding: "13px 26px", background: "var(--se-teal)", color: "#fff", fontWeight: 700, fontSize: 15, borderRadius: "var(--radius-md)", textDecoration: "none" }}>
+            style={{ display: "inline-flex", alignItems: "center", gap: 8, padding: "13px 26px", color: "#fff", background: "var(--se-teal)", fontWeight: 700, fontSize: 15, borderRadius: "var(--radius-md)", textDecoration: "none" }}>
             <ArrowLeft size={15} /> طلب عرض توضيحي
           </Link>
         </div>

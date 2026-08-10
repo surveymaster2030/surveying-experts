@@ -39,9 +39,6 @@ export function CTABanner({ title, body, ctas, eyebrow, children }: CTABannerPro
               textTransform: "uppercase",
               letterSpacing: "0.18em",
               color: "var(--se-yellow)",
-              background: "rgba(246,186,59,0.12)",
-              padding: "0.35em 0.85em",
-              borderRadius: "999px",
               marginBottom: "1.25rem",
             }}
           >

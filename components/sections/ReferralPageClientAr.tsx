@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
@@ -17,8 +17,7 @@ function Eyebrow({ children, light, teal }: { children: React.ReactNode; light?:
       display: "inline-block", fontFamily: "var(--font-sans)", fontSize: 12, fontWeight: 700,
       textTransform: "uppercase", letterSpacing: "0.1em",
       color: teal ? "var(--se-teal)" : light ? "var(--accent)" : "var(--se-blue)",
-      background: teal ? "rgba(34,167,168,0.15)" : light ? "rgba(246,186,59,0.12)" : "var(--se-yellow-soft)",
-      padding: "0.35em 0.85em", borderRadius: "var(--radius-pill)", marginBottom: "1.25rem",
+      marginBottom: "1.25rem",
     }}>
       {children}
     </span>
@@ -53,7 +52,7 @@ const inputStyle: React.CSSProperties = {
   width: "100%", border: "1.5px solid var(--border-default)",
   borderRadius: "var(--radius-md)", padding: "11px 14px",
   fontFamily: "var(--font-sans)", fontSize: 15,
-  color: "var(--text-strong)", background: "var(--se-white)",
+  color: "var(--text-strong)",
   outline: "none", boxSizing: "border-box", transition: "border-color 0.15s",
   textAlign: "right", direction: "rtl",
 };
@@ -186,8 +185,8 @@ export function ReferralPageClientAr() {
         <div aria-hidden style={{ position: "absolute", inset: 0, backgroundImage: "radial-gradient(circle at 1px 1px, rgba(34,167,168,0.07) 1px, transparent 0)", backgroundSize: "22px 22px" }} />
         <div aria-hidden style={{ position: "absolute", top: 0, left: 0, right: 0, height: 3, background: "linear-gradient(270deg, var(--se-teal) 0%, var(--accent) 100%)" }} />
         <div className="se-container" style={{ position: "relative", textAlign: "center", direction: "rtl" }}>
-          <span style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "rgba(246,186,59,0.15)", border: "1px solid rgba(246,186,59,0.35)", color: "var(--se-yellow)", fontFamily: "var(--font-sans)", fontSize: 12, fontWeight: 700, letterSpacing: "0.1em", padding: "0.4em 1em", borderRadius: "var(--radius-pill)", marginBottom: "1.5rem" }}>
-            <span style={{ width: 7, height: 7, borderRadius: "50%", background: "var(--se-yellow)", display: "inline-block" }} />
+          <span style={{ display: "inline-flex", alignItems: "center", gap: 8, border: "1px solid rgba(246,186,59,0.35)", color: "var(--se-yellow)", fontFamily: "var(--font-sans)", fontSize: 12, fontWeight: 700, letterSpacing: "0.1em", padding: "0.4em 1em", marginBottom: "1.5rem" }}>
+            <span style={{ width: 7, height: 7, borderRadius: "50%", display: "inline-block" }} />
             خبراء الترشيح | قريباً
           </span>
           <h1 style={{ fontFamily: "var(--font-display)", fontWeight: 700, color: "#fff", fontSize: "clamp(32px, 5vw, 58px)", lineHeight: 1.15, margin: "0 0 20px", maxWidth: 760, marginInline: "auto" }}>
@@ -196,7 +195,7 @@ export function ReferralPageClientAr() {
           <p style={{ fontFamily: "var(--font-sans)", color: "rgba(255,255,255,0.75)", fontSize: 18, lineHeight: 1.8, maxWidth: 620, marginInline: "auto", marginBottom: 36 }}>
             احصل على مكافآت قيّمة عند ترشيح عملاء جدد لتقنيات وخدمات المساحة الاحترافية في المملكة العربية السعودية. سجّل اهتمامك الآن لتكون من أوائل شركائنا المعتمدين عند الإطلاق.
           </p>
-          <a href="#waitlist" style={{ display: "inline-flex", alignItems: "center", gap: 10, padding: "14px 32px", background: "var(--se-teal)", color: "#fff", fontFamily: "var(--font-sans)", fontWeight: 700, fontSize: 16, borderRadius: "var(--radius-md)", textDecoration: "none", boxShadow: "0 4px 24px rgba(34,167,168,0.35)" }}>
+          <a href="#waitlist" style={{ display: "inline-flex", alignItems: "center", gap: 10, padding: "14px 32px", color: "#fff", fontFamily: "var(--font-sans)", fontWeight: 700, fontSize: 16, borderRadius: "var(--radius-md)", textDecoration: "none", boxShadow: "0 4px 24px rgba(34,167,168,0.35)" }}>
             <ArrowLeft size={18} />
             انضم لقائمة الانتظار
           </a>
@@ -216,14 +215,14 @@ export function ReferralPageClientAr() {
       </section>
 
       {/* ── How It Works ──────────────────────────────────────────────────────── */}
-      <section style={{ background: "var(--se-white)", padding: "88px 0 72px" }}>
+      <section style={{ padding: "88px 0 72px" }}>
         <div className="se-container">
           <SecHead label="آلية العمل" title="أربع خطوات مباشرة نحو شراكة ناجحة" subtitle="بمجرد إطلاق البرنامج الرسمي، ستكون عملية الترشيح منظمة وشفافة بالكامل." centered />
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: 20, marginTop: 12, direction: "rtl" }}>
             {steps.map((step, i) => (
-              <div key={i} style={{ background: "var(--se-gray-50)", borderRadius: "var(--radius-xl)", padding: "28px 24px", border: "1px solid var(--border-subtle)", position: "relative", overflow: "hidden", textAlign: "right" }}>
+              <div key={i} style={{ borderRadius: "var(--radius-xl)", padding: "28px 24px", border: "1px solid var(--border-subtle)", position: "relative", overflow: "hidden", textAlign: "right" }}>
                 <div aria-hidden style={{ position: "absolute", top: 16, left: 20, fontFamily: "var(--font-display)", fontSize: 56, fontWeight: 800, color: "var(--se-teal)", opacity: 0.07, lineHeight: 1, userSelect: "none" }}>{step.num}</div>
-                <div style={{ width: 48, height: 48, borderRadius: "var(--radius-md)", background: "var(--se-teal-soft)", color: "var(--se-teal)", display: "grid", placeItems: "center", marginBottom: 16, marginRight: "auto" }}>{step.icon}</div>
+                <div style={{ width: 48, height: 48, borderRadius: "var(--radius-md)", color: "var(--se-teal)", display: "grid", placeItems: "center", marginBottom: 16, marginRight: "auto" }}>{step.icon}</div>
                 <div style={{ fontFamily: "var(--font-sans)", fontSize: 11, fontWeight: 700, letterSpacing: "0.08em", color: "var(--se-teal)", marginBottom: 6 }}>الخطوة {step.num}</div>
                 <h3 style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 18, color: "var(--text-strong)", margin: "0 0 10px" }}>{step.title}</h3>
                 <p style={{ fontFamily: "var(--font-sans)", fontSize: 14, color: "var(--text-muted)", lineHeight: 1.8, margin: 0 }}>{step.desc}</p>
@@ -234,20 +233,20 @@ export function ReferralPageClientAr() {
       </section>
 
       {/* ── Reward Options ────────────────────────────────────────────────────── */}
-      <section style={{ background: "var(--se-gray-50)", padding: "80px 0 72px", borderTop: "1px solid var(--border-subtle)", borderBottom: "1px solid var(--border-subtle)" }}>
+      <section style={{ padding: "80px 0 72px", borderTop: "1px solid var(--border-subtle)", borderBottom: "1px solid var(--border-subtle)" }}>
         <div className="se-container">
           <SecHead label="خيارات المكافآت" title="طريقتان لاستثمار نقاطك" subtitle="اختر الطريقة التي تناسب احتياجاتك المهنية. كلا الخيارين سيكون متاحاً عند الإطلاق." centered />
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 24, maxWidth: 760, marginInline: "auto", direction: "rtl" }}>
-            <div style={{ background: "var(--se-white)", borderRadius: "var(--radius-xl)", padding: "36px 28px", border: "2px solid var(--se-teal)", boxShadow: "var(--shadow-md)", textAlign: "right" }}>
-              <div style={{ width: 56, height: 56, borderRadius: "var(--radius-md)", background: "var(--se-teal-soft)", color: "var(--se-teal)", display: "grid", placeItems: "center", marginBottom: 20, marginRight: "auto" }}><Store size={26} /></div>
+            <div style={{ borderRadius: "var(--radius-xl)", padding: "36px 28px", border: "2px solid var(--se-teal)", boxShadow: "var(--shadow-md)", textAlign: "right" }}>
+              <div style={{ width: 56, height: 56, borderRadius: "var(--radius-md)", color: "var(--se-teal)", display: "grid", placeItems: "center", marginBottom: 20, marginRight: "auto" }}><Store size={26} /></div>
               <h3 style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 20, color: "var(--text-strong)", margin: "0 0 8px" }}>رصيد في المتجر الإلكتروني</h3>
               <div style={{ fontFamily: "var(--font-display)", fontSize: "clamp(28px,4vw,38px)", fontWeight: 800, color: "var(--se-teal)", margin: "12px 0", direction: "ltr", textAlign: "center" }}>1 نقطة = 1 ريال</div>
               <p style={{ fontFamily: "var(--font-sans)", fontSize: 14, color: "var(--text-muted)", lineHeight: 1.8, margin: 0 }}>
                 اجمع النقاط واستخدمها كقيمة شرائية كاملة (بدون حد أدنى) لطلب المعدات أو الإكسسوارات من متجرنا الإلكتروني الرسمي.
               </p>
             </div>
-            <div style={{ background: "var(--se-white)", borderRadius: "var(--radius-xl)", padding: "36px 28px", border: "2px solid var(--border-subtle)", boxShadow: "var(--shadow-md)", textAlign: "right" }}>
-              <div style={{ width: 56, height: 56, borderRadius: "var(--radius-md)", background: "var(--se-yellow-soft)", color: "var(--se-blue-dark)", display: "grid", placeItems: "center", marginBottom: 20, marginRight: "auto" }}><Banknote size={26} /></div>
+            <div style={{ borderRadius: "var(--radius-xl)", padding: "36px 28px", border: "2px solid var(--border-subtle)", boxShadow: "var(--shadow-md)", textAlign: "right" }}>
+              <div style={{ width: 56, height: 56, borderRadius: "var(--radius-md)", color: "var(--se-blue-dark)", display: "grid", placeItems: "center", marginBottom: 20, marginRight: "auto" }}><Banknote size={26} /></div>
               <h3 style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 20, color: "var(--text-strong)", margin: "0 0 8px" }}>مكافآت مالية مباشرة</h3>
               <div style={{ fontFamily: "var(--font-display)", fontSize: "clamp(28px,4vw,38px)", fontWeight: 800, color: "var(--se-blue-dark)", margin: "12px 0", direction: "ltr", textAlign: "center" }}>2 نقطة = 1 ريال</div>
               <p style={{ fontFamily: "var(--font-sans)", fontSize: 14, color: "var(--text-muted)", lineHeight: 1.8, margin: 0 }}>
@@ -262,7 +261,7 @@ export function ReferralPageClientAr() {
       </section>
 
       {/* ── Who Can Join ─────────────────────────────────────────────────────── */}
-      <section style={{ background: "var(--se-white)", padding: "80px 0 64px" }}>
+      <section style={{ padding: "80px 0 64px" }}>
         <div className="se-container">
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "clamp(32px, 5vw, 72px)", alignItems: "center", direction: "rtl" }} className="kit-2col">
             <div>
@@ -285,14 +284,14 @@ export function ReferralPageClientAr() {
               </p>
             </div>
             <div>
-              <div style={{ background: "var(--se-gray-50)", borderRadius: "var(--radius-xl)", padding: "32px 28px", border: "1px solid var(--border-subtle)", textAlign: "right" }}>
+              <div style={{ borderRadius: "var(--radius-xl)", padding: "32px 28px", border: "1px solid var(--border-subtle)", textAlign: "right" }}>
                 <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 20, justifyContent: "flex-end" }}>
                   <span style={{ fontFamily: "var(--font-sans)", fontSize: 13, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.08em", color: "var(--text-muted)" }}>المنتجات والخدمات المشمولة</span>
                   <Tag size={18} style={{ color: "var(--se-teal)", flexShrink: 0 }} />
                 </div>
                 <div style={{ display: "flex", flexWrap: "wrap", gap: 10, justifyContent: "flex-end" }}>
                   {equipmentTags.map((tag) => (
-                    <span key={tag} style={{ fontFamily: "var(--font-sans)", fontSize: 13, fontWeight: 600, color: "var(--se-blue-dark)", background: "var(--se-white)", border: "1.5px solid var(--border-subtle)", borderRadius: "var(--radius-pill)", padding: "6px 14px", lineHeight: 1, direction: "rtl" }}>{tag}</span>
+                    <span key={tag} style={{ fontFamily: "var(--font-sans)", fontSize: 13, fontWeight: 600, color: "var(--se-blue-dark)", border: "1.5px solid var(--border-subtle)", padding: "6px 14px", lineHeight: 1, direction: "rtl" }}>{tag}</span>
                   ))}
                 </div>
                 <p style={{ fontFamily: "var(--font-sans)", fontSize: 12, color: "var(--text-muted)", marginTop: 16, marginBottom: 0, fontStyle: "italic", textAlign: "right" }}>
@@ -305,7 +304,7 @@ export function ReferralPageClientAr() {
       </section>
 
       {/* ── Conditions Accordion ─────────────────────────────────────────────── */}
-      <section style={{ background: "var(--se-gray-50)", padding: "80px 0 72px", borderTop: "1px solid var(--border-subtle)" }}>
+      <section style={{ padding: "80px 0 72px", borderTop: "1px solid var(--border-subtle)" }}>
         <div className="se-container">
           <SecHead label="الأحكام التنظيمية" title="معايير مهنية واضحة" subtitle="لضمان الشفافية، سيخضع البرنامج للضوابط التالية." centered />
           <div style={{ maxWidth: 760, marginInline: "auto", direction: "rtl" }}>
@@ -328,9 +327,9 @@ export function ReferralPageClientAr() {
       </section>
 
       {/* ── Company Disclaimer ────────────────────────────────────────────────── */}
-      <section style={{ background: "var(--se-white)", padding: "72px 0 64px" }}>
+      <section style={{ padding: "72px 0 64px" }}>
         <div className="se-container">
-          <div style={{ maxWidth: 760, marginInline: "auto", direction: "rtl", background: "rgba(246,186,59,0.08)", border: "1.5px solid rgba(246,186,59,0.35)", borderRadius: "var(--radius-xl)", padding: "32px 36px", borderRight: "4px solid var(--se-yellow)" }}>
+          <div style={{ maxWidth: 760, marginInline: "auto", direction: "rtl", border: "1.5px solid rgba(246,186,59,0.35)", borderRadius: "var(--radius-xl)", padding: "32px 36px", borderRight: "4px solid var(--se-yellow)" }}>
             <div style={{ fontFamily: "var(--font-sans)", fontSize: 11, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.1em", color: "var(--se-blue-dark)", marginBottom: 12, opacity: 0.7 }}>إخلاء مسؤولية قانوني</div>
             <p style={{ fontFamily: "var(--font-sans)", fontSize: 14, color: "var(--text-body)", lineHeight: 1.9, margin: 0, textAlign: "right" }}>
               تُقدم هذه الصفحة خطة مبدئية لبرنامج ترشيح لم يُطلق رسمياً بعد. جميع التفاصيل، بما فيها نسب المكافآت ومعايير الأهلية، قابلة للتعديل. تسجيلك في قائمة الانتظار لا يمثل التزاماً تعاقدياً، وسيتم تزويدك بالشروط والأحكام النهائية عند الإطلاق.
@@ -340,23 +339,23 @@ export function ReferralPageClientAr() {
       </section>
 
       {/* ── Waiting List Form ─────────────────────────────────────────────────── */}
-      <section id="waitlist" style={{ background: "var(--se-gray-50)", padding: "88px 0 80px", borderTop: "1px solid var(--border-subtle)" }}>
+      <section id="waitlist" style={{ padding: "88px 0 80px", borderTop: "1px solid var(--border-subtle)" }}>
         <div className="se-container">
           <SecHead label="قائمة الانتظار" title="سجّل اهتمامك اليوم" subtitle="كن من أوائل المنضمين لشبكة شركائنا. سنتواصل معك لتزويدك بالتفاصيل الكاملة ورابط التفعيل فور إطلاق البرنامج." centered />
           <div style={{ maxWidth: 680, marginInline: "auto" }}>
             {sent ? (
-              <div style={{ textAlign: "center", padding: "56px 32px", direction: "rtl", background: "var(--se-teal-soft)", border: "1.5px solid var(--se-teal)", borderRadius: "var(--radius-xl)" }}>
+              <div style={{ textAlign: "center", padding: "56px 32px", direction: "rtl", border: "1.5px solid var(--se-teal)", borderRadius: "var(--radius-xl)" }}>
                 <CheckCircle2 size={52} style={{ color: "var(--se-teal)", margin: "0 auto 20px", display: "block" }} />
                 <h3 style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 24, color: "var(--text-strong)", margin: "0 0 12px" }}>أنت في القائمة!</h3>
                 <p style={{ fontFamily: "var(--font-sans)", fontSize: 16, color: "var(--text-muted)", margin: "0 0 28px", lineHeight: 1.8 }}>
                   سنتواصل معك فور إطلاق خبراء الترشيح لتزويدك بتفاصيل التفعيل الكاملة.
                 </p>
-                <button onClick={() => { setSent(false); setForm({ name: "", company: "", phone: "", email: "", referType: "", rewardPref: "", notes: "" }); setConsent(false); }} style={{ display: "inline-flex", alignItems: "center", gap: 8, padding: "10px 22px", background: "var(--se-teal)", color: "#fff", fontWeight: 700, fontSize: 14, borderRadius: "var(--radius-md)", border: "none", cursor: "pointer", fontFamily: "var(--font-sans)" }}>
+                <button onClick={() => { setSent(false); setForm({ name: "", company: "", phone: "", email: "", referType: "", rewardPref: "", notes: "" }); setConsent(false); }} style={{ display: "inline-flex", alignItems: "center", gap: 8, padding: "10px 22px", color: "#fff", fontWeight: 700, fontSize: 14, borderRadius: "var(--radius-md)", border: "none", cursor: "pointer", fontFamily: "var(--font-sans)" }}>
                   تسجيل آخر
                 </button>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} noValidate style={{ background: "var(--se-white)", borderRadius: "var(--radius-xl)", padding: "clamp(24px, 4vw, 40px)", border: "1px solid var(--border-subtle)", boxShadow: "var(--shadow-md)", display: "flex", flexDirection: "column", gap: 20, direction: "rtl" }}>
+              <form onSubmit={handleSubmit} noValidate style={{ borderRadius: "var(--radius-xl)", padding: "clamp(24px, 4vw, 40px)", border: "1px solid var(--border-subtle)", boxShadow: "var(--shadow-md)", display: "flex", flexDirection: "column", gap: 20, direction: "rtl" }}>
                 {/* Name + Company */}
                 <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }} className="kit-2col">
                   <div>
@@ -424,7 +423,7 @@ export function ReferralPageClientAr() {
                   </label>
                   {errors.consent && <p style={{ fontFamily: "var(--font-sans)", fontSize: 12, color: "var(--se-red, #e63535)", margin: "4px 0 0", textAlign: "right" }}>{errors.consent}</p>}
                 </div>
-                <button type="submit" style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", gap: 10, padding: "14px 32px", background: "var(--se-teal)", color: "#fff", fontFamily: "var(--font-sans)", fontWeight: 700, fontSize: 16, borderRadius: "var(--radius-md)", border: "none", cursor: "pointer", boxShadow: "0 4px 20px rgba(34,167,168,0.3)" }}>
+                <button type="submit" style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", gap: 10, padding: "14px 32px", color: "#fff", fontFamily: "var(--font-sans)", fontWeight: 700, fontSize: 16, borderRadius: "var(--radius-md)", border: "none", cursor: "pointer", boxShadow: "0 4px 20px rgba(34,167,168,0.3)" }}>
                   <ArrowLeft size={18} />
                   انضم لقائمة الانتظار
                 </button>
@@ -437,18 +436,18 @@ export function ReferralPageClientAr() {
       {/* ── Policy Modal ─────────────────────────────────────────────────────── */}
       {policyOpen && (
         <>
-          <div onClick={() => setPolicyOpen(false)} style={{ position: "fixed", inset: 0, zIndex: 9998, background: "rgba(13,22,30,0.65)", backdropFilter: "blur(4px)" }} />
-          <div style={{ position: "fixed", zIndex: 9999, top: "50%", left: "50%", transform: "translate(-50%, -50%)", width: "min(560px, calc(100vw - 32px))", maxHeight: "85vh", overflowY: "auto", background: "var(--se-white)", borderRadius: "var(--radius-xl)", boxShadow: "0 24px 64px rgba(13,22,30,0.35)", direction: "rtl" }}>
+          <div onClick={() => setPolicyOpen(false)} style={{ position: "fixed", inset: 0, zIndex: 9998, backdropFilter: "blur(4px)" }} />
+          <div style={{ position: "fixed", zIndex: 9999, top: "50%", left: "50%", transform: "translate(-50%, -50%)", width: "min(560px, calc(100vw - 32px))", maxHeight: "85vh", overflowY: "auto", borderRadius: "var(--radius-xl)", boxShadow: "0 24px 64px rgba(13,22,30,0.35)", direction: "rtl" }}>
             <div style={{ height: 4, background: "linear-gradient(270deg, var(--se-teal) 0%, var(--accent) 100%)", borderRadius: "var(--radius-xl) var(--radius-xl) 0 0" }} />
-            <button onClick={() => setPolicyOpen(false)} aria-label="إغلاق" style={{ position: "absolute", top: 16, left: 16, width: 32, height: 32, borderRadius: "50%", background: "var(--se-gray-50)", border: "1px solid var(--border-subtle)", color: "var(--text-muted)", display: "grid", placeItems: "center", cursor: "pointer" }}>
+            <button onClick={() => setPolicyOpen(false)} aria-label="إغلاق" style={{ position: "absolute", top: 16, left: 16, width: 32, height: 32, borderRadius: "50%", border: "1px solid var(--border-subtle)", color: "var(--text-muted)", display: "grid", placeItems: "center", cursor: "pointer" }}>
               <X size={15} />
             </button>
             <div style={{ padding: "28px 32px 32px" }}>
               <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 20, justifyContent: "flex-end" }}>
                 <h3 style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 20, color: "var(--text-strong)", margin: 0, textAlign: "right" }}>شروط البرنامج وإخلاء المسؤولية</h3>
-                <div style={{ width: 44, height: 44, borderRadius: "var(--radius-md)", background: "rgba(246,186,59,0.15)", color: "var(--se-yellow, #f6ba3b)", display: "grid", placeItems: "center", flexShrink: 0 }}><ShieldAlert size={22} /></div>
+                <div style={{ width: 44, height: 44, borderRadius: "var(--radius-md)", color: "var(--se-yellow, #f6ba3b)", display: "grid", placeItems: "center", flexShrink: 0 }}><ShieldAlert size={22} /></div>
               </div>
-              <div style={{ background: "var(--se-gray-50)", border: "1px solid var(--border-subtle)", borderRadius: "var(--radius-lg)", padding: "20px", marginBottom: 20, maxHeight: 320, overflowY: "auto" }}>
+              <div style={{ border: "1px solid var(--border-subtle)", borderRadius: "var(--radius-lg)", padding: "20px", marginBottom: 20, maxHeight: 320, overflowY: "auto" }}>
                 <p style={{ fontFamily: "var(--font-sans)", fontSize: 14, color: "var(--text-body)", lineHeight: 1.85, margin: "0 0 14px", textAlign: "right" }}><strong>يرجى القراءة بعناية قبل تقديم طلبك:</strong></p>
                 <p style={{ fontFamily: "var(--font-sans)", fontSize: 14, color: "var(--text-body)", lineHeight: 1.85, margin: "0 0 14px", textAlign: "right" }}>
                   تُقدم هذه الصفحة خطة مبدئية لبرنامج ترشيح <strong>لم يُطلق رسمياً بعد</strong>. جميع التفاصيل قابلة للتعديل. تسجيلك لا يمثل التزاماً تعاقدياً.
@@ -488,7 +487,7 @@ export function ReferralPageClientAr() {
           <p style={{ fontFamily: "var(--font-sans)", fontSize: 17, color: "rgba(255,255,255,0.65)", margin: "0 0 32px", lineHeight: 1.8 }}>
             فريقنا مستعد للإجابة على أي أسئلة حول هيكل الشراكة وبرنامج الترشيح القادم.
           </p>
-          <Link href="/ar/contact" style={{ display: "inline-flex", alignItems: "center", gap: 10, padding: "13px 30px", background: "var(--se-teal)", color: "#fff", fontFamily: "var(--font-sans)", fontWeight: 700, fontSize: 15, borderRadius: "var(--radius-md)", textDecoration: "none", boxShadow: "0 4px 20px rgba(34,167,168,0.35)" }}>
+          <Link href="/ar/contact" style={{ display: "inline-flex", alignItems: "center", gap: 10, padding: "13px 30px", color: "#fff", fontFamily: "var(--font-sans)", fontWeight: 700, fontSize: 15, borderRadius: "var(--radius-md)", textDecoration: "none", boxShadow: "0 4px 20px rgba(34,167,168,0.35)" }}>
             <ArrowLeft size={16} />
             تواصل معنا الآن
           </Link>

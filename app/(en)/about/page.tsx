@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 
 function Eyebrow({ children, light }: { children: React.ReactNode; light?: boolean }) {
   return (
-    <span style={{ display: "inline-block", fontFamily: "var(--font-sans)", fontSize: 12, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.18em", color: light ? "var(--accent)" : "var(--se-blue)", background: light ? "rgba(246,186,59,0.12)" : "var(--se-yellow-soft)", padding: "0.35em 0.85em", borderRadius: "var(--radius-pill)", marginBottom: "1.25rem" }}>
+    <span style={{ display: "inline-block", fontFamily: "var(--font-sans)", fontSize: 12, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.18em", color: light ? "var(--accent)" : "var(--se-blue)", marginBottom: "1.25rem" }}>
       {children}
     </span>
   );
@@ -27,15 +27,14 @@ function SecHead({ label, title, subtitle, light, centered }: { label?: string; 
     <div style={{ marginBottom: "2.5rem", textAlign: centered ? "center" : "left" }}>
       {label && <Eyebrow light={light}>{label}</Eyebrow>}
       <h2 style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "clamp(1.625rem, 3vw, 2.25rem)", color: light ? "#fff" : "var(--text-strong)", lineHeight: 1.1, letterSpacing: "-0.02em", margin: label ? "0.5rem 0 0.875rem" : "0 0 0.875rem" }}>{title}</h2>
-      {subtitle && <p style={{ fontFamily: "var(--font-sans)", fontSize: "var(--text-md)", color: light ? "rgba(255,255,255,0.65)" : "var(--text-muted)", lineHeight: 1.65, maxWidth: centered ? "58ch" : undefined, margin: centered ? "0 auto" : 0 }}>{subtitle}</p>}
+      {subtitle && <p style={{ fontFamily: "var(--font-sans)", fontSize: "var(--text-md)", color: light ? "#CCDFE9" : "var(--text-muted)", lineHeight: 1.65, maxWidth: centered ? "58ch" : undefined, margin: centered ? "0 auto" : 0 }}>{subtitle}</p>}
     </div>
   );
 }
 
 function IconTile({ children, color = "teal", size = 44 }: { children: React.ReactNode; color?: "teal" | "blue"; size?: number }) {
-  const bg = color === "teal" ? "var(--se-teal)" : "var(--se-blue)";
   return (
-    <div style={{ width: size, height: size, borderRadius: "var(--radius-md)", background: bg, color: "#fff", display: "grid", placeItems: "center", flexShrink: 0 }}>
+    <div style={{ width: size, height: size, borderRadius: "var(--radius-md)", background: color === "teal" ? "var(--se-teal)" : "var(--se-blue)", color: "#fff", display: "grid", placeItems: "center", flexShrink: 0 }}>
       {children}
     </div>
   );
@@ -90,14 +89,14 @@ export default function AboutPage() {
           <h1 style={{ fontFamily: "var(--font-sans)", fontWeight: 700, color: "#fff", fontSize: "clamp(30px,4vw,52px)", lineHeight: 1.06, letterSpacing: "-0.025em", margin: "18px 0 16px", maxWidth: 640 }}>
             About Surveying Experts
           </h1>
-          <p style={{ fontFamily: "var(--font-sans)", color: "rgba(255,255,255,0.72)", fontSize: 18, lineHeight: 1.65, maxWidth: 520, margin: 0 }}>
+          <p style={{ fontFamily: "var(--font-sans)", color: "#D5E7EF", fontSize: 18, lineHeight: 1.65, maxWidth: 520, margin: 0 }}>
             A Saudi partner for professional surveying equipment, seamless online procurement, and complete field support.
           </p>
         </div>
       </section>
 
       {/* Who We Are */}
-      <section style={{ background: "var(--se-white)", position: "relative", overflow: "hidden", padding: "96px 0", backgroundImage: "linear-gradient(rgba(53,80,97,0.06) 1px,transparent 1px),linear-gradient(90deg,rgba(53,80,97,0.06) 1px,transparent 1px)", backgroundSize: "40px 40px" }}>
+      <section style={{ position: "relative", overflow: "hidden", padding: "96px 0", backgroundImage: "linear-gradient(rgba(53,80,97,0.06) 1px,transparent 1px),linear-gradient(90deg,rgba(53,80,97,0.06) 1px,transparent 1px)", backgroundSize: "40px 40px" }}>
         <div className="se-container">
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64, alignItems: "center" }} className="kit-2col">
             <div>
@@ -109,15 +108,15 @@ export default function AboutPage() {
                 We are not only a supplier. We are a 360 degree surveying support partner, helping clients from initial recommendation through to long-term field use.
               </p>
               <a href="https://drive.google.com/file/d/1Bgu4lldhOTQgDpDXV2MpO2--AG5OEvOK/view" target="_blank" rel="noopener noreferrer"
-                style={{ display: "inline-flex", alignItems: "center", gap: 8, padding: "11px 20px", background: "var(--se-blue-soft)", color: "var(--se-blue)", fontWeight: 700, fontSize: 15, borderRadius: "var(--radius-md)", border: "1.5px solid var(--se-blue)", textDecoration: "none" }}>
+                style={{ display: "inline-flex", alignItems: "center", gap: 8, padding: "11px 20px", color: "var(--se-blue)", fontWeight: 700, fontSize: 15, borderRadius: "var(--radius-md)", border: "1.5px solid var(--se-blue)", textDecoration: "none" }}>
                 Download Company Profile <Download size={15} />
               </a>
             </div>
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
               {visionCards.map((c) => (
                 <div key={c.label} style={{ borderRadius: "var(--radius-lg)", padding: "20px 16px", background: c.bg }}>
-                  <div style={{ fontFamily: "var(--font-sans)", fontWeight: 700, fontSize: 11, textTransform: "uppercase", letterSpacing: "0.12em", color: c.dark ? "rgba(36,57,73,0.7)" : "rgba(255,255,255,0.6)", marginBottom: 8 }}>{c.label}</div>
-                  <div style={{ fontFamily: "var(--font-sans)", fontSize: 13, lineHeight: 1.55, color: c.dark ? "var(--se-blue-dark)" : "rgba(255,255,255,0.9)" }}>{c.text}</div>
+                  <div style={{ fontFamily: "var(--font-sans)", fontWeight: 700, fontSize: 11, textTransform: "uppercase", letterSpacing: "0.12em", color: c.dark ? "rgba(36,57,73,0.7)" : "#C5DAE6", marginBottom: 8 }}>{c.label}</div>
+                  <div style={{ fontFamily: "var(--font-sans)", fontSize: 13, lineHeight: 1.55, color: c.dark ? "var(--se-blue-dark)" : "#F0F6F9" }}>{c.text}</div>
                 </div>
               ))}
             </div>
@@ -126,7 +125,7 @@ export default function AboutPage() {
       </section>
 
       {/* What Makes Us Different */}
-      <section style={{ background: "var(--se-gray-50)", position: "relative", overflow: "hidden", padding: "96px 0", backgroundImage: "radial-gradient(circle at 1px 1px, rgba(34,167,168,0.12) 1px, transparent 0)", backgroundSize: "20px 20px" }}>
+      <section style={{ position: "relative", overflow: "hidden", padding: "96px 0", backgroundImage: "radial-gradient(circle at 1px 1px, rgba(34,167,168,0.12) 1px, transparent 0)", backgroundSize: "20px 20px" }}>
         <div className="se-container">
           <div style={{ textAlign: "center", marginBottom: "3rem" }}>
             <Eyebrow>What Makes Us Different</Eyebrow>
@@ -160,7 +159,7 @@ export default function AboutPage() {
       </section>
 
       {/* Our Team */}
-      <section style={{ background: "var(--se-white)", padding: "96px 0" }}>
+      <section style={{ padding: "96px 0" }}>
         <div className="se-container">
           <SecHead label="Our Team" title="A Tactical Squad Built for Field Success" subtitle="Our engineers, sales specialists, technicians, and support team work together to help clients choose, use, maintain, and get value from their equipment." centered />
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: 20 }}>
@@ -169,7 +168,7 @@ export default function AboutPage() {
                 style={{ borderRadius: "var(--radius-xl)", padding: "28px 24px", background: "linear-gradient(135deg, var(--se-blue-dark) 0%, var(--se-blue) 100%)", borderLeft: "4px solid var(--se-teal)", boxShadow: "var(--shadow-md)" }}>
                 <IconTile color="teal">{r.icon}</IconTile>
                 <div style={{ fontFamily: "var(--font-sans)", fontWeight: 700, fontSize: 16, color: "#fff", margin: "14px 0 8px" }}>{r.title}</div>
-                <div style={{ fontFamily: "var(--font-sans)", fontSize: 14, lineHeight: 1.65, color: "rgba(255,255,255,0.65)" }}>{r.text}</div>
+                <div style={{ fontFamily: "var(--font-sans)", fontSize: 14, lineHeight: 1.65, color: "#CCDFE9" }}>{r.text}</div>
               </div>
             ))}
           </div>
@@ -177,7 +176,7 @@ export default function AboutPage() {
       </section>
 
       {/* Trust Badges — Certifications */}
-      <section style={{ background: "var(--se-blue-darker)", position: "relative", overflow: "hidden", padding: "96px 0" }}>
+      <section style={{ background: "var(--se-blue-dark)", position: "relative", overflow: "hidden", padding: "96px 0" }}>
         <div aria-hidden style={{ position: "absolute", inset: 0, backgroundImage: "radial-gradient(circle at 1px 1px, rgba(34,167,168,0.07) 1px, transparent 0)", backgroundSize: "24px 24px" }} />
         <div aria-hidden style={{ position: "absolute", top: 0, left: 0, right: 0, height: 1, background: "linear-gradient(90deg, transparent, rgba(34,167,168,0.3), transparent)" }} />
         <div className="se-container" style={{ position: "relative" }}>
@@ -190,7 +189,7 @@ export default function AboutPage() {
             <h2 style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "clamp(1.5rem,3vw,2.1rem)", color: "#fff", margin: "0 0 12px", letterSpacing: "-0.02em" }}>
               Certifications & Approvals
             </h2>
-            <p style={{ fontFamily: "var(--font-sans)", fontSize: 15, color: "rgba(255,255,255,0.55)", maxWidth: "50ch", margin: "0 auto" }}>
+            <p style={{ fontFamily: "var(--font-sans)", fontSize: 15, color: "#BDD4E2", maxWidth: "50ch", margin: "0 auto" }}>
               Surveying Experts maintains a complete professional compliance profile for vendor registration, government procurement, and B2B partnerships.
             </p>
           </div>
@@ -201,22 +200,21 @@ export default function AboutPage() {
               <div key={c.name}
                 style={{
                   display: "inline-flex", alignItems: "center", gap: 10,
-                  background: "rgba(255,255,255,0.06)",
                   border: "1px solid rgba(34,167,168,0.25)",
                   borderRadius: "var(--radius-lg)",
                   padding: "12px 18px",
                   backdropFilter: "blur(4px)",
                 }}>
-                <div style={{ width: 32, height: 32, borderRadius: "var(--radius-md)", background: "rgba(34,167,168,0.2)", color: "var(--se-teal)", display: "grid", placeItems: "center", flexShrink: 0 }}>
+                <div style={{ width: 32, height: 32, borderRadius: "var(--radius-md)", color: "var(--se-teal)", display: "grid", placeItems: "center", flexShrink: 0 }}>
                   {c.icon}
                 </div>
-                <span style={{ fontFamily: "var(--font-sans)", fontWeight: 600, fontSize: 13, color: "rgba(255,255,255,0.85)", whiteSpace: "nowrap" }}>{c.name}</span>
+                <span style={{ fontFamily: "var(--font-sans)", fontWeight: 600, fontSize: 13, color: "#E8F1F6", whiteSpace: "nowrap" }}>{c.name}</span>
               </div>
             ))}
           </div>
           <div style={{ textAlign: "center" }}>
             <Link href="/contact"
-              style={{ display: "inline-flex", alignItems: "center", gap: 8, padding: "11px 20px", background: "rgba(255,255,255,0.08)", color: "rgba(255,255,255,0.75)", fontWeight: 700, fontSize: 14, borderRadius: "var(--radius-md)", border: "1px solid rgba(255,255,255,0.15)", textDecoration: "none" }}>
+              style={{ display: "inline-flex", alignItems: "center", gap: 8, padding: "11px 20px", color: "#DAEAF1", fontWeight: 700, fontSize: 14, borderRadius: "var(--radius-md)", border: "1px solid rgba(255,255,255,0.15)", textDecoration: "none" }}>
               Request Company Documents <FileText size={14} />
             </Link>
           </div>
@@ -233,7 +231,7 @@ export default function AboutPage() {
               Download Company Profile <Download size={16} />
             </a>
             <a href="https://surveyingexperts-sa.com/collections/all" target="_blank" rel="noopener noreferrer"
-              style={{ display: "inline-flex", alignItems: "center", gap: 8, padding: "13px 26px", background: "transparent", color: "#fff", fontWeight: 700, fontSize: 16, borderRadius: "var(--radius-md)", border: "1.5px solid rgba(255,255,255,0.4)", textDecoration: "none" }}>
+              style={{ display: "inline-flex", alignItems: "center", gap: 8, padding: "13px 26px", background: "transparent", color: "#fff", fontWeight: 700, fontSize: 16, borderRadius: "var(--radius-md)", border: "1.5px solid #A3C3D8", textDecoration: "none" }}>
               Visit Online Store <ExternalLink size={16} />
             </a>
           </div>

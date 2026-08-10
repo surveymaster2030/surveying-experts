@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 
 function Eyebrow({ children, light, teal }: { children: React.ReactNode; light?: boolean; teal?: boolean }) {
   return (
-    <span style={{ display: "inline-block", fontFamily: "var(--font-sans)", fontSize: 12, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.18em", color: teal ? "var(--se-teal)" : light ? "var(--accent)" : "var(--se-blue)", background: teal ? "rgba(34,167,168,0.15)" : light ? "rgba(246,186,59,0.12)" : "var(--se-yellow-soft)", padding: "0.35em 0.85em", borderRadius: "var(--radius-pill)", marginBottom: "1.25rem" }}>
+    <span style={{ display: "inline-block", fontFamily: "var(--font-sans)", fontSize: 12, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.18em", color: teal ? "var(--se-teal)" : light ? "var(--accent)" : "var(--se-blue)", marginBottom: "1.25rem" }}>
       {children}
     </span>
   );
@@ -24,7 +24,7 @@ function SecHead({ label, title, subtitle, light, centered, teal }: { label?: st
     <div style={{ marginBottom: "2.5rem", textAlign: centered ? "center" : "left" }}>
       {label && <Eyebrow light={light} teal={teal}>{label}</Eyebrow>}
       <h2 style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "clamp(1.625rem, 3vw, 2.25rem)", color: light ? "#fff" : "var(--text-strong)", lineHeight: 1.1, letterSpacing: "-0.02em", margin: label ? "0.5rem 0 0.875rem" : "0 0 0.875rem" }}>{title}</h2>
-      {subtitle && <p style={{ fontFamily: "var(--font-sans)", fontSize: "var(--text-md)", color: light ? "rgba(255,255,255,0.65)" : "var(--text-muted)", lineHeight: 1.65, maxWidth: centered ? "58ch" : undefined, margin: centered ? "0 auto" : 0 }}>{subtitle}</p>}
+      {subtitle && <p style={{ fontFamily: "var(--font-sans)", fontSize: "var(--text-md)", color: light ? "#CCDFE9" : "var(--text-muted)", lineHeight: 1.65, maxWidth: centered ? "58ch" : undefined, margin: centered ? "0 auto" : 0 }}>{subtitle}</p>}
     </div>
   );
 }
@@ -56,20 +56,20 @@ export default function CertificationsPage() {
           <h1 style={{ fontFamily: "var(--font-display)", fontWeight: 700, color: "#fff", fontSize: "clamp(30px,4vw,52px)", lineHeight: 1.06, letterSpacing: "-0.02em", margin: "18px 0 16px", maxWidth: 640 }}>
             Standards That Back Our Work
           </h1>
-          <p style={{ fontFamily: "var(--font-sans)", color: "rgba(255,255,255,0.7)", fontSize: 18, lineHeight: 1.65, maxWidth: 520, margin: 0 }}>
+          <p style={{ fontFamily: "var(--font-sans)", color: "#CFE3EC", fontSize: 18, lineHeight: 1.65, maxWidth: 520, margin: 0 }}>
             Our certifications, partnerships, and approvals reflect the standards behind every device, service, and client relationship.
           </p>
         </div>
       </section>
 
       {/* Certifications Grid */}
-      <section style={{ background: "var(--se-white)", position: "relative", overflow: "hidden", padding: "96px 0", backgroundImage: "radial-gradient(circle at 1px 1px, rgba(53,80,97,0.10) 1px, transparent 0)", backgroundSize: "22px 22px" }}>
+      <section style={{ position: "relative", overflow: "hidden", padding: "96px 0", backgroundImage: "radial-gradient(circle at 1px 1px, rgba(53,80,97,0.10) 1px, transparent 0)", backgroundSize: "22px 22px" }}>
         <div className="se-container">
           <SecHead label="Our Credentials" title="Certifications & Authorizations" subtitle="A record of the standards, authorizations, and partnerships that support our operations." centered />
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(180px, 1fr))", gap: 16 }}>
             {certifications.map((cert) => (
-              <div key={cert.name} style={{ background: "var(--se-white)", border: "1px solid var(--border-subtle)", borderRadius: "var(--radius-lg)", padding: "22px 18px", boxShadow: "var(--shadow-xs)", textAlign: "center" }}>
-                <div style={{ width: 52, height: 52, borderRadius: "var(--radius-md)", background: "var(--se-teal-soft)", color: "var(--se-teal)", display: "grid", placeItems: "center", margin: "0 auto 14px" }}>
+              <div key={cert.name} style={{ border: "1px solid var(--border-subtle)", borderRadius: "var(--radius-lg)", padding: "22px 18px", boxShadow: "var(--shadow-xs)", textAlign: "center" }}>
+                <div style={{ width: 52, height: 52, borderRadius: "var(--radius-md)", color: "var(--se-teal)", display: "grid", placeItems: "center", margin: "0 auto 14px" }}>
                   {cert.icon}
                 </div>
                 <div style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 14, color: "var(--text-strong)", marginBottom: 4, lineHeight: 1.3 }}>{cert.name}</div>
@@ -86,14 +86,14 @@ export default function CertificationsPage() {
         <div aria-hidden style={{ position: "absolute", inset: 0, backgroundImage: "radial-gradient(circle at 1px 1px, rgba(34,167,168,0.07) 1px, transparent 0)", backgroundSize: "22px 22px" }} />
         <div className="se-container" style={{ position: "relative", textAlign: "center" }}>
           <h2 style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "clamp(1.5rem,3vw,2rem)", color: "#fff", marginBottom: "0.875rem" }}>Need Documentation or a Company Profile?</h2>
-          <p style={{ fontFamily: "var(--font-sans)", fontSize: "var(--text-md)", color: "rgba(255,255,255,0.65)", marginBottom: "2rem" }}>Contact our team for certification documentation, approved-vendor packages, or a formal company profile.</p>
+          <p style={{ fontFamily: "var(--font-sans)", fontSize: "var(--text-md)", color: "#CCDFE9", marginBottom: "2rem" }}>Contact our team for certification documentation, approved-vendor packages, or a formal company profile.</p>
           <div style={{ display: "flex", flexWrap: "wrap", gap: 14, justifyContent: "center" }}>
             <Link href="/contact"
-              style={{ display: "inline-flex", alignItems: "center", gap: 8, padding: "13px 26px", background: "var(--accent)", color: "var(--se-blue-dark)", fontWeight: 700, fontSize: 16, borderRadius: "var(--radius-md)", textDecoration: "none" }}>
+              style={{ display: "inline-flex", alignItems: "center", gap: 8, padding: "13px 26px", background: "var(--se-teal)", color: "#fff", fontWeight: 700, fontSize: 16, borderRadius: "var(--radius-md)", textDecoration: "none" }}>
               Contact Our Team <ArrowRight size={16} />
             </Link>
             <a href="https://drive.google.com/file/d/1Bgu4lldhOTQgDpDXV2MpO2--AG5OEvOK/view" target="_blank" rel="noopener noreferrer"
-              style={{ display: "inline-flex", alignItems: "center", gap: 8, padding: "13px 26px", background: "transparent", color: "#fff", fontWeight: 700, fontSize: 16, borderRadius: "var(--radius-md)", border: "1.5px solid rgba(255,255,255,0.4)", textDecoration: "none" }}>
+              style={{ display: "inline-flex", alignItems: "center", gap: 8, padding: "13px 26px", background: "transparent", color: "#fff", fontWeight: 700, fontSize: 16, borderRadius: "var(--radius-md)", border: "1.5px solid #A3C3D8", textDecoration: "none" }}>
               Download Company Profile
             </a>
           </div>

@@ -116,25 +116,25 @@ export function Footer() {
             <p style={{ fontSize: "var(--text-xs)", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.18em", color: "var(--se-yellow)", marginBottom: "0.75rem" }}>
               Professional Equipment. Complete Field Support.
             </p>
-            <p style={{ fontSize: "var(--text-sm)", color: "rgba(255,255,255,0.6)", lineHeight: 1.65, margin: "0 0 1.5rem" }}>
+            <p style={{ fontSize: "var(--text-sm)", color: "#C5DAE6", lineHeight: 1.65, margin: "0 0 1.5rem" }}>
               A Saudi company connecting field teams with professional surveying technologies from trusted global brands, backed by local consultation, maintenance, calibration, and after-sales service.
             </p>
 
             {/* Contact info */}
             <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem", marginBottom: "1.25rem" }}>
-              <a href="tel:+966540646245" style={{ display: "flex", alignItems: "center", gap: "0.5rem", fontSize: "var(--text-sm)", color: "rgba(255,255,255,0.7)", textDecoration: "none" }}>
+              <a href="tel:+966540646245" style={{ display: "flex", alignItems: "center", gap: "0.5rem", fontSize: "var(--text-sm)", color: "#CFE3EC", textDecoration: "none" }}>
                 <Phone size={13} style={{ color: "var(--se-yellow)", flexShrink: 0 }} />
                 +966 54 064 6245
               </a>
-              <a href="mailto:Sales@surveyingexperts-sa.com" style={{ display: "flex", alignItems: "center", gap: "0.5rem", fontSize: "var(--text-sm)", color: "rgba(255,255,255,0.7)", textDecoration: "none" }}>
+              <a href="mailto:Sales@surveyingexperts-sa.com" style={{ display: "flex", alignItems: "center", gap: "0.5rem", fontSize: "var(--text-sm)", color: "#CFE3EC", textDecoration: "none" }}>
                 <Mail size={13} style={{ color: "var(--se-yellow)", flexShrink: 0 }} />
                 Sales@surveyingexperts-sa.com
               </a>
-              <a href="https://surveyingexperts-sa.com" target="_blank" rel="noopener noreferrer" style={{ display: "flex", alignItems: "center", gap: "0.5rem", fontSize: "var(--text-sm)", color: "rgba(255,255,255,0.7)", textDecoration: "none" }}>
+              <a href="https://surveyingexperts-sa.com" target="_blank" rel="noopener noreferrer" style={{ display: "flex", alignItems: "center", gap: "0.5rem", fontSize: "var(--text-sm)", color: "#CFE3EC", textDecoration: "none" }}>
                 <Globe size={13} style={{ color: "var(--se-yellow)", flexShrink: 0 }} />
                 surveyingexperts-sa.com
               </a>
-              <span style={{ display: "flex", alignItems: "center", gap: "0.5rem", fontSize: "var(--text-sm)", color: "rgba(255,255,255,0.7)" }}>
+              <span style={{ display: "flex", alignItems: "center", gap: "0.5rem", fontSize: "var(--text-sm)", color: "#CFE3EC" }}>
                 <MapPin size={13} style={{ color: "var(--se-yellow)", flexShrink: 0 }} />
                 Riyadh, Saudi Arabia | 5 Branches across KSA
               </span>
@@ -157,7 +157,7 @@ export function Footer() {
                     height: 36,
                     borderRadius: "var(--radius-md)",
                     background: "rgba(255,255,255,0.08)",
-                    color: "rgba(255,255,255,0.65)",
+                    color: "#CCDFE9",
                     border: "1px solid rgba(255,255,255,0.08)",
                     transition: "background 0.15s, color 0.15s",
                     flexShrink: 0,
@@ -171,7 +171,7 @@ export function Footer() {
                   onMouseLeave={(e) => {
                     const el = e.currentTarget as HTMLElement;
                     el.style.background = "rgba(255,255,255,0.08)";
-                    el.style.color = "rgba(255,255,255,0.65)";
+                    el.style.color = "#CCDFE9";
                     el.style.borderColor = "rgba(255,255,255,0.08)";
                   }}
                 >
@@ -184,7 +184,7 @@ export function Footer() {
           {/* Link cols */}
           {Object.entries(footerLinks).map(([group, links]) => (
             <div key={group}>
-              <h4 style={{ fontSize: "var(--text-xs)", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.12em", color: "rgba(255,255,255,0.4)", marginBottom: "1rem" }}>
+              <h4 style={{ fontSize: "var(--text-xs)", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.12em", color: "#A3C3D8", marginBottom: "1rem" }}>
                 {group}
               </h4>
               <ul style={{ listStyle: "none", margin: 0, padding: 0, display: "flex", flexDirection: "column", gap: "0.5rem" }}>
@@ -195,9 +195,9 @@ export function Footer() {
                         href={link.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        style={{ display: "inline-flex", alignItems: "center", gap: "0.3rem", fontSize: "var(--text-sm)", color: "rgba(255,255,255,0.6)", textDecoration: "none", transition: "color 0.15s" }}
+                        style={{ display: "inline-flex", alignItems: "center", gap: "0.3rem", fontSize: "var(--text-sm)", color: "#C5DAE6", textDecoration: "none", transition: "color 0.15s" }}
                         onMouseEnter={(e) => (e.currentTarget.style.color = "var(--se-yellow)")}
-                        onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.6)")}
+                        onMouseLeave={(e) => (e.currentTarget.style.color = "#C5DAE6")}
                       >
                         {link.label}
                         <ExternalLink size={11} />
@@ -205,9 +205,9 @@ export function Footer() {
                     ) : (
                       <Link
                         href={link.href}
-                        style={{ fontSize: "var(--text-sm)", color: "rgba(255,255,255,0.6)", textDecoration: "none", transition: "color 0.15s" }}
+                        style={{ fontSize: "var(--text-sm)", color: "#C5DAE6", textDecoration: "none", transition: "color 0.15s" }}
                         onMouseEnter={(e) => (e.currentTarget.style.color = "var(--se-yellow)")}
-                        onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.6)")}
+                        onMouseLeave={(e) => (e.currentTarget.style.color = "#C5DAE6")}
                       >
                         {link.label}
                       </Link>
@@ -232,19 +232,19 @@ export function Footer() {
         >
           <div>
             <div style={{ fontSize: 11, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.1em", color: "rgba(255,255,255,0.3)", marginBottom: 4 }}>Legal Name</div>
-            <div style={{ fontSize: 12, color: "rgba(255,255,255,0.5)" }}>khubara almasaha alfanniyya Company For Investment</div>
+            <div style={{ fontSize: 12, color: "#B4CEDF" }}>khubara almasaha alfanniyya Company For Investment</div>
           </div>
           <div>
             <div style={{ fontSize: 11, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.1em", color: "rgba(255,255,255,0.3)", marginBottom: 4 }}>رقم السجل التجاري</div>
-            <div style={{ fontSize: 12, color: "rgba(255,255,255,0.5)" }}>1009010757</div>
+            <div style={{ fontSize: 12, color: "#B4CEDF" }}>1009010757</div>
           </div>
           <div>
             <div style={{ fontSize: 11, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.1em", color: "rgba(255,255,255,0.3)", marginBottom: 4 }}>الرقم الوطني الموحد</div>
-            <div style={{ fontSize: 12, color: "rgba(255,255,255,0.5)" }}>7035999759</div>
+            <div style={{ fontSize: 12, color: "#B4CEDF" }}>7035999759</div>
           </div>
           <div>
             <div style={{ fontSize: 11, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.1em", color: "rgba(255,255,255,0.3)", marginBottom: 4 }}>Address</div>
-            <div style={{ fontSize: 12, color: "rgba(255,255,255,0.5)" }}>RIYADH · Al Malaz Dist. · Salahuddin Al Ayyubi</div>
+            <div style={{ fontSize: 12, color: "#B4CEDF" }}>RIYADH · Al Malaz Dist. · Salahuddin Al Ayyubi</div>
           </div>
         </div>
 

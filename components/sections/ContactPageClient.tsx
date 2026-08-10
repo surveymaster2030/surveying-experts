@@ -9,7 +9,7 @@ import {
 
 function Eyebrow({ children, light, teal }: { children: React.ReactNode; light?: boolean; teal?: boolean }) {
   return (
-    <span style={{ display: "inline-block", fontFamily: "var(--font-sans)", fontSize: 12, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.18em", color: teal ? "var(--se-teal)" : light ? "var(--accent)" : "var(--se-blue)", background: teal ? "rgba(34,167,168,0.15)" : light ? "rgba(246,186,59,0.12)" : "var(--se-yellow-soft)", padding: "0.35em 0.85em", borderRadius: "var(--radius-pill)", marginBottom: "1.25rem" }}>
+    <span style={{ display: "inline-block", fontFamily: "var(--font-sans)", fontSize: 12, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.18em", color: teal ? "var(--se-teal)" : light ? "var(--accent)" : "var(--se-blue)", marginBottom: "1.25rem" }}>
       {children}
     </span>
   );
@@ -20,7 +20,7 @@ function SecHead({ label, title, subtitle, light, centered, teal }: { label?: st
     <div style={{ marginBottom: "2.5rem", textAlign: centered ? "center" : "left" }}>
       {label && <Eyebrow light={light} teal={teal}>{label}</Eyebrow>}
       <h2 style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "clamp(1.625rem, 3vw, 2.25rem)", color: light ? "#fff" : "var(--text-strong)", lineHeight: 1.1, letterSpacing: "-0.02em", margin: label ? "0.5rem 0 0.875rem" : "0 0 0.875rem" }}>{title}</h2>
-      {subtitle && <p style={{ fontFamily: "var(--font-sans)", fontSize: "var(--text-md)", color: light ? "rgba(255,255,255,0.65)" : "var(--text-muted)", lineHeight: 1.65, maxWidth: centered ? "58ch" : undefined, margin: centered ? "0 auto" : 0 }}>{subtitle}</p>}
+      {subtitle && <p style={{ fontFamily: "var(--font-sans)", fontSize: "var(--text-md)", color: light ? "#CCDFE9" : "var(--text-muted)", lineHeight: 1.65, maxWidth: centered ? "58ch" : undefined, margin: centered ? "0 auto" : 0 }}>{subtitle}</p>}
     </div>
   );
 }
@@ -49,7 +49,6 @@ const inputStyle: React.CSSProperties = {
   fontFamily: "var(--font-sans)",
   fontSize: 15,
   color: "var(--text-strong)",
-  background: "var(--se-white)",
   outline: "none",
   boxSizing: "border-box",
   transition: "border-color 0.15s",
@@ -86,20 +85,20 @@ export function ContactPageClient() {
           <h1 style={{ fontFamily: "var(--font-display)", fontWeight: 700, color: "#fff", fontSize: "clamp(30px,4vw,52px)", lineHeight: 1.06, letterSpacing: "-0.02em", margin: "18px 0 16px", maxWidth: 620 }}>
             Talk to Our Team
           </h1>
-          <p style={{ fontFamily: "var(--font-sans)", color: "rgba(255,255,255,0.7)", fontSize: 18, lineHeight: 1.65, maxWidth: 520, margin: 0 }}>
+          <p style={{ fontFamily: "var(--font-sans)", color: "#CFE3EC", fontSize: 18, lineHeight: 1.65, maxWidth: 520, margin: 0 }}>
             Whether you need a quote, technical support, or want to find the nearest branch — we're here to help across Saudi Arabia.
           </p>
         </div>
       </section>
 
       {/* Contact Cards */}
-      <section style={{ background: "var(--se-white)", position: "relative", overflow: "hidden", padding: "80px 0 64px", backgroundImage: "radial-gradient(circle at 1px 1px, rgba(53,80,97,0.10) 1px, transparent 0)", backgroundSize: "22px 22px" }}>
+      <section style={{ position: "relative", overflow: "hidden", padding: "80px 0 64px", backgroundImage: "radial-gradient(circle at 1px 1px, rgba(53,80,97,0.10) 1px, transparent 0)", backgroundSize: "22px 22px" }}>
         <div className="se-container">
           <SecHead label="Reach Us" title="Ways to Contact Us" centered />
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: 16, marginBottom: 64 }}>
             {contactTypes.map((ct) => (
-              <div key={ct.label} style={{ background: "var(--se-white)", border: "1px solid var(--border-subtle)", borderRadius: "var(--radius-lg)", padding: "24px 20px", boxShadow: "var(--shadow-xs)", display: "flex", flexDirection: "column", gap: 12 }}>
-                <div style={{ width: 48, height: 48, borderRadius: "var(--radius-md)", background: "var(--se-teal-soft)", color: "var(--se-teal)", display: "grid", placeItems: "center" }}>
+              <div key={ct.label} style={{ border: "1px solid var(--border-subtle)", borderRadius: "var(--radius-lg)", padding: "24px 20px", boxShadow: "var(--shadow-xs)", display: "flex", flexDirection: "column", gap: 12 }}>
+                <div style={{ width: 48, height: 48, borderRadius: "var(--radius-md)", color: "var(--se-teal)", display: "grid", placeItems: "center" }}>
                   {ct.icon}
                 </div>
                 <div>
@@ -125,7 +124,7 @@ export function ContactPageClient() {
           <div style={{ maxWidth: 680, margin: "0 auto" }}>
             <SecHead label="Send a Message" title="Send Us a Message" centered />
             {sent ? (
-              <div style={{ textAlign: "center", padding: "48px 24px", background: "var(--se-teal-soft)", border: "1.5px solid var(--se-teal)", borderRadius: "var(--radius-xl)" }}>
+              <div style={{ textAlign: "center", padding: "48px 24px", border: "1.5px solid var(--se-teal)", borderRadius: "var(--radius-xl)" }}>
                 <CheckCircle2 size={48} style={{ color: "var(--se-teal)", margin: "0 auto 16px" }} />
                 <div style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 22, color: "var(--text-strong)", marginBottom: 10 }}>Message Received</div>
                 <div style={{ fontFamily: "var(--font-sans)", fontSize: 16, color: "var(--text-muted)", marginBottom: 24 }}>Our team will get back to you shortly.</div>

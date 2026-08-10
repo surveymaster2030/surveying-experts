@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 
 function Eyebrow({ children, light }: { children: React.ReactNode; light?: boolean }) {
   return (
-    <span style={{ display: "inline-block", fontFamily: "var(--font-sans)", fontSize: 12, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.18em", color: light ? "var(--accent)" : "var(--se-blue)", background: light ? "rgba(246,186,59,0.12)" : "var(--se-yellow-soft)", padding: "0.35em 0.85em", borderRadius: "var(--radius-pill)", marginBottom: "1.25rem" }}>
+    <span style={{ display: "inline-block", fontFamily: "var(--font-sans)", fontSize: 12, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.18em", color: light ? "var(--accent)" : "var(--se-blue)", marginBottom: "1.25rem" }}>
       {children}
     </span>
   );
@@ -25,7 +25,7 @@ function SecHead({ label, title, subtitle, light, centered }: { label?: string; 
     <div style={{ marginBottom: "2.5rem", textAlign: centered ? "center" : "right" }}>
       {label && <Eyebrow light={light}>{label}</Eyebrow>}
       <h2 style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "clamp(1.625rem, 3vw, 2.25rem)", color: light ? "#fff" : "var(--text-strong)", lineHeight: 1.1, letterSpacing: "-0.02em", margin: label ? "0.5rem 0 0.875rem" : "0 0 0.875rem" }}>{title}</h2>
-      {subtitle && <p style={{ fontFamily: "var(--font-sans)", fontSize: "var(--text-md)", color: light ? "rgba(255,255,255,0.65)" : "var(--text-muted)", lineHeight: 1.65, maxWidth: centered ? "58ch" : undefined, margin: centered ? "0 auto" : 0 }}>{subtitle}</p>}
+      {subtitle && <p style={{ fontFamily: "var(--font-sans)", fontSize: "var(--text-md)", color: light ? "#CCDFE9" : "var(--text-muted)", lineHeight: 1.65, maxWidth: centered ? "58ch" : undefined, margin: centered ? "0 auto" : 0 }}>{subtitle}</p>}
     </div>
   );
 }
@@ -150,19 +150,19 @@ export default function ArMaintenanceCalibrationPage() {
           <h1 style={{ fontFamily: "var(--font-display)", fontWeight: 700, color: "#fff", fontSize: "clamp(30px,4vw,52px)", lineHeight: 1.06, letterSpacing: "-0.02em", margin: "18px 0 16px", maxWidth: 600 }}>
             صيانة ومعايرة المعدات المساحية
           </h1>
-          <p style={{ fontFamily: "var(--font-sans)", color: "rgba(255,255,255,0.7)", fontSize: 18, lineHeight: 1.65, maxWidth: 520, margin: "0 0 28px" }}>
+          <p style={{ fontFamily: "var(--font-sans)", color: "#CFE3EC", fontSize: 18, lineHeight: 1.65, maxWidth: 520, margin: "0 0 28px" }}>
             حافظ على دقة أجهزتك وجاهزيتها الميدانية. الاستخدام الشاق ودرجات الحرارة والاهتزازات تؤثر على الأداء، والجهاز غير المعاير يقدم إحداثيات خاطئة دون تحذير.
           </p>
         </div>
       </section>
 
       {/* Equipment We Service */}
-      <section style={{ background: "var(--se-white)", position: "relative", overflow: "hidden", padding: "80px 0", backgroundImage: "linear-gradient(rgba(53,80,97,0.06) 1px,transparent 1px),linear-gradient(90deg,rgba(53,80,97,0.06) 1px,transparent 1px)", backgroundSize: "40px 40px" }}>
+      <section style={{ position: "relative", overflow: "hidden", padding: "80px 0", backgroundImage: "linear-gradient(rgba(53,80,97,0.06) 1px,transparent 1px),linear-gradient(90deg,rgba(53,80,97,0.06) 1px,transparent 1px)", backgroundSize: "40px 40px" }}>
         <div className="se-container">
           <SecHead label="الأجهزة التي نصونها" title="نصون ونعاير هذه المعدات" centered />
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: 16 }}>
             {equipmentCards.map((e) => (
-              <div key={e.name} style={{ background: "var(--se-gray-50)", border: "1px solid var(--border-subtle)", borderRadius: "var(--radius-lg)", padding: "22px 20px", boxShadow: "var(--shadow-xs)" }}>
+              <div key={e.name} style={{ border: "1px solid var(--border-subtle)", borderRadius: "var(--radius-lg)", padding: "22px 20px", boxShadow: "var(--shadow-xs)" }}>
                 <div style={{ width: 44, height: 44, borderRadius: "var(--radius-md)", background: "var(--se-teal)", color: "#fff", display: "grid", placeItems: "center", marginBottom: 14 }}>
                   {e.icon}
                 </div>
@@ -175,13 +175,13 @@ export default function ArMaintenanceCalibrationPage() {
       </section>
 
       {/* Maintenance Packages */}
-      <section style={{ background: "var(--se-gray-50)", position: "relative", overflow: "hidden", padding: "96px 0", backgroundImage: "radial-gradient(circle at 1px 1px, rgba(34,167,168,0.12) 1px, transparent 0)", backgroundSize: "20px 20px" }}>
+      <section style={{ position: "relative", overflow: "hidden", padding: "96px 0", backgroundImage: "radial-gradient(circle at 1px 1px, rgba(34,167,168,0.12) 1px, transparent 0)", backgroundSize: "20px 20px" }}>
         <div className="se-container">
           <SecHead label="باقات الشركات" title="باقات صيانة المعدات للشركات" subtitle="مصممة للشركات التي تمتلك عدة أجهزة توتال ستيشن وأوتو ليفل للقيام بصيانة مجدولة." centered />
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: 18 }}>
             {packages.map((pkg) => (
               <div key={pkg.name}
-                style={{ background: "var(--se-white)", border: `${pkg.featured ? "2px solid var(--accent)" : "1px solid var(--border-subtle)"}`, borderRadius: "var(--radius-xl)", overflow: "hidden", boxShadow: pkg.featured ? "0 12px 32px rgba(246,186,59,0.15)" : "var(--shadow-sm)", position: "relative" }}>
+                style={{ border: `${pkg.featured ? "2px solid var(--accent)" : "1px solid var(--border-subtle)"}`, borderRadius: "var(--radius-xl)", overflow: "hidden", boxShadow: pkg.featured ? "0 12px 32px rgba(246,186,59,0.15)" : "var(--shadow-sm)", position: "relative" }}>
                 {pkg.featured && (
                   <div style={{ background: "var(--accent)", color: "var(--se-blue-dark)", fontFamily: "var(--font-sans)", fontWeight: 700, fontSize: 11, textAlign: "center", padding: "7px 0", letterSpacing: "0.08em" }}>
                     الأنسب للشركات
@@ -215,12 +215,12 @@ export default function ArMaintenanceCalibrationPage() {
       </section>
 
       {/* Individual Calibration Services */}
-      <section style={{ background: "var(--se-white)", padding: "80px 0" }}>
+      <section style={{ padding: "80px 0" }}>
         <div className="se-container">
           <SecHead label="المعايرة الفردية" title="خدمات المعايرة الفردية" subtitle="للأجهزة الفردية أو حين تحتاج إلى شهادة معايرة معتمدة." centered />
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 18 }}>
             {calibrationServices.map((svc) => (
-              <div key={svc.name} style={{ background: "var(--se-gray-50)", border: "1px solid var(--border-subtle)", borderRadius: "var(--radius-xl)", padding: "28px 24px", boxShadow: "var(--shadow-sm)" }}>
+              <div key={svc.name} style={{ border: "1px solid var(--border-subtle)", borderRadius: "var(--radius-xl)", padding: "28px 24px", boxShadow: "var(--shadow-sm)" }}>
                 <div style={{ fontFamily: "var(--font-sans)", fontWeight: 700, fontSize: 17, color: "var(--text-strong)", marginBottom: 8 }}>{svc.name}</div>
                 <div style={{ display: "flex", alignItems: "baseline", gap: 6, marginBottom: 4 }}>
                   <span style={{ fontFamily: "var(--font-sans)", fontWeight: 800, fontSize: 28, color: "var(--se-blue)", letterSpacing: "-0.02em" }}>{svc.price}</span>
@@ -243,7 +243,7 @@ export default function ArMaintenanceCalibrationPage() {
       </section>
 
       {/* Process Steppers */}
-      <section style={{ background: "var(--se-gray-50)", padding: "80px 0" }}>
+      <section style={{ padding: "80px 0" }}>
         <div className="se-container">
           <SecHead label="العملية" title="كيف تسير الخدمة" centered />
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 40 }} className="kit-2col">
@@ -254,8 +254,8 @@ export default function ArMaintenanceCalibrationPage() {
                 {maintSteps.map((s, i) => (
                   <div key={s.n} style={{ display: "flex", gap: 14 }}>
                     <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-                      <div style={{ width: 32, height: 32, borderRadius: "50%", background: "var(--se-blue)", color: "#fff", display: "grid", placeItems: "center", fontFamily: "var(--font-mono)", fontWeight: 700, fontSize: 11, flexShrink: 0 }}>{s.n}</div>
-                      {i < maintSteps.length - 1 && <div style={{ width: 2, flex: 1, background: "var(--border-subtle)", margin: "4px 0" }} />}
+                      <div style={{ width: 32, height: 32, borderRadius: "50%", background: "var(--se-teal)", color: "#fff", display: "grid", placeItems: "center", fontFamily: "var(--font-mono)", fontWeight: 700, fontSize: 11, flexShrink: 0 }}>{s.n}</div>
+                      {i < maintSteps.length - 1 && <div style={{ width: 2, flex: 1, margin: "4px 0" }} />}
                     </div>
                     <div style={{ paddingBottom: i < maintSteps.length - 1 ? 18 : 0, paddingTop: 5 }}>
                       <div style={{ fontFamily: "var(--font-sans)", fontWeight: 600, fontSize: 14, color: "var(--text-strong)" }}>{s.label}</div>
@@ -272,7 +272,7 @@ export default function ArMaintenanceCalibrationPage() {
                   <div key={s.n} style={{ display: "flex", gap: 14 }}>
                     <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
                       <div style={{ width: 32, height: 32, borderRadius: "50%", background: "var(--se-teal)", color: "#fff", display: "grid", placeItems: "center", fontFamily: "var(--font-mono)", fontWeight: 700, fontSize: 11, flexShrink: 0 }}>{s.n}</div>
-                      {i < calibSteps.length - 1 && <div style={{ width: 2, flex: 1, background: "var(--border-subtle)", margin: "4px 0" }} />}
+                      {i < calibSteps.length - 1 && <div style={{ width: 2, flex: 1, margin: "4px 0" }} />}
                     </div>
                     <div style={{ paddingBottom: i < calibSteps.length - 1 ? 18 : 0, paddingTop: 5 }}>
                       <div style={{ fontFamily: "var(--font-sans)", fontWeight: 600, fontSize: 14, color: "var(--text-strong)" }}>{s.label}</div>
@@ -290,19 +290,19 @@ export default function ArMaintenanceCalibrationPage() {
         <div className="se-container" style={{ display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", gap: 24 }}>
           <div>
             <div style={{ fontFamily: "var(--font-sans)", fontWeight: 700, fontSize: 18, color: "#fff", marginBottom: 6 }}>استمر في العمل أثناء الصيانة</div>
-            <p style={{ fontFamily: "var(--font-sans)", fontSize: 14, color: "rgba(255,255,255,0.65)", margin: 0 }}>
+            <p style={{ fontFamily: "var(--font-sans)", fontSize: 14, color: "#CCDFE9", margin: 0 }}>
               تصفح متجرنا الإلكتروني للحوامل والموشورات والشواخص والبطاريات البديلة.
             </p>
           </div>
           <a href="https://surveyingexperts-sa.com/collections/all" target="_blank" rel="noopener noreferrer"
-            style={{ display: "inline-flex", alignItems: "center", gap: 8, padding: "12px 22px", background: "var(--accent)", color: "var(--se-blue-dark)", fontWeight: 700, fontSize: 14, borderRadius: "var(--radius-md)", textDecoration: "none", flexShrink: 0 }}>
+            style={{ display: "inline-flex", alignItems: "center", gap: 8, padding: "12px 22px", background: "var(--se-teal)", color: "#fff", fontWeight: 700, fontSize: 14, borderRadius: "var(--radius-md)", textDecoration: "none", flexShrink: 0 }}>
             تصفح المتجر الإلكتروني <ExternalLink size={14} />
           </a>
         </div>
       </section>
 
       {/* FAQ */}
-      <section style={{ background: "var(--se-white)", padding: "80px 0" }}>
+      <section style={{ padding: "80px 0" }}>
         <div className="se-container" style={{ maxWidth: 760, margin: "0 auto" }}>
           <SecHead label="الأسئلة الشائعة" title="أسئلة يطرحها عملاؤنا" centered />
           <MaintenanceFAQAr />
@@ -315,12 +315,12 @@ export default function ArMaintenanceCalibrationPage() {
           <h2 style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "clamp(1.5rem,3vw,2rem)", color: "#fff", marginBottom: "1rem" }}>
             هل معداتك بحاجة إلى صيانة أو معايرة؟
           </h2>
-          <p style={{ fontFamily: "var(--font-sans)", fontSize: 16, color: "rgba(255,255,255,0.65)", marginBottom: "2rem" }}>
+          <p style={{ fontFamily: "var(--font-sans)", fontSize: 16, color: "#CCDFE9", marginBottom: "2rem" }}>
             تواصل معنا لجدولة موعد الخدمة أو الاستفسار عن الباقات المناسبة لشركتك.
           </p>
           <div style={{ display: "flex", flexWrap: "wrap", gap: 14, justifyContent: "center" }}>
             <Link href="/ar/contact"
-              style={{ display: "inline-flex", alignItems: "center", gap: 8, padding: "13px 26px", background: "var(--accent)", color: "var(--se-blue-dark)", fontWeight: 700, fontSize: 16, borderRadius: "var(--radius-md)", textDecoration: "none" }}>
+              style={{ display: "inline-flex", alignItems: "center", gap: 8, padding: "13px 26px", background: "var(--se-teal)", color: "#fff", fontWeight: 700, fontSize: 16, borderRadius: "var(--radius-md)", textDecoration: "none" }}>
               <ArrowLeft size={15} /> طلب خدمة الصيانة أو المعايرة
             </Link>
           </div>

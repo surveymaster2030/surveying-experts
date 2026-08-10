@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
 import { MapPin, Phone, Clock, Wrench, Mail } from "lucide-react";
@@ -76,7 +76,7 @@ export function BranchesSectionAr() {
       <div className="se-container">
         {/* Section header */}
         <div style={{ textAlign: "center", marginBottom: 40 }}>
-          <span style={{ display: "inline-block", fontFamily: "var(--font-sans)", fontSize: 12, fontWeight: 700, letterSpacing: "0.08em", color: "var(--se-blue)", background: "var(--se-yellow-soft)", padding: "0.35em 0.85em", borderRadius: "var(--radius-pill)", marginBottom: "1.25rem" }}>
+          <span style={{ display: "inline-block", fontFamily: "var(--font-sans)", fontSize: 12, fontWeight: 700, letterSpacing: "0.08em", color: "var(--se-blue)", marginBottom: "1.25rem" }}>
             فروعنا
           </span>
           <h2 style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "clamp(1.625rem, 3vw, 2.25rem)", color: "var(--text-strong)", lineHeight: 1.2, margin: "0.5rem 0 0.875rem" }}>

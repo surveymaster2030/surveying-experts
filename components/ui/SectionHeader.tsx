@@ -32,7 +32,6 @@ export function SectionHeader({
           style={{
             marginBottom: "1rem",
             display: "inline-block",
-            background: onDark ? "rgba(246,186,59,0.15)" : "var(--surface-accent-soft)",
             color: onDark ? "var(--se-yellow)" : "var(--se-blue)",
           }}
         >

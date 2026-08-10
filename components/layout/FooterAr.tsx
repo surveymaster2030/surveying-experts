@@ -113,27 +113,27 @@ export function FooterAr() {
             <p style={{ fontSize: "var(--text-xs)", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.12em", color: "var(--se-yellow)", marginBottom: "0.75rem" }}>
               المعدات المناسبة. دعم ميداني متكامل.
             </p>
-            <p style={{ fontSize: "var(--text-sm)", color: "rgba(255,255,255,0.6)", lineHeight: 1.8, margin: "0 0 1.5rem" }}>
+            <p style={{ fontSize: "var(--text-sm)", color: "#C5DAE6", lineHeight: 1.8, margin: "0 0 1.5rem" }}>
               شركة سعودية تربط الفرق الميدانية بتقنيات المساحة الاحترافية من علامات تجارية عالمية موثوقة، مدعومة بخدمات الاستشارة والصيانة والمعايرة وما بعد البيع.
             </p>
 
             <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem", marginBottom: "1.25rem" }}>
               <a href="tel:+966540646245"
-                style={{ display: "flex", alignItems: "center", gap: "0.5rem", fontSize: "var(--text-sm)", color: "rgba(255,255,255,0.7)", textDecoration: "none" }}>
+                style={{ display: "flex", alignItems: "center", gap: "0.5rem", fontSize: "var(--text-sm)", color: "#CFE3EC", textDecoration: "none" }}>
                 <Phone size={13} style={{ color: "var(--se-yellow)", flexShrink: 0 }} />
                 +966 54 064 6245
               </a>
               <a href="mailto:Sales@surveyingexperts-sa.com"
-                style={{ display: "flex", alignItems: "center", gap: "0.5rem", fontSize: "var(--text-sm)", color: "rgba(255,255,255,0.7)", textDecoration: "none" }}>
+                style={{ display: "flex", alignItems: "center", gap: "0.5rem", fontSize: "var(--text-sm)", color: "#CFE3EC", textDecoration: "none" }}>
                 <Mail size={13} style={{ color: "var(--se-yellow)", flexShrink: 0 }} />
                 Sales@surveyingexperts-sa.com
               </a>
               <a href="https://surveyingexperts-sa.com" target="_blank" rel="noopener noreferrer"
-                style={{ display: "flex", alignItems: "center", gap: "0.5rem", fontSize: "var(--text-sm)", color: "rgba(255,255,255,0.7)", textDecoration: "none" }}>
+                style={{ display: "flex", alignItems: "center", gap: "0.5rem", fontSize: "var(--text-sm)", color: "#CFE3EC", textDecoration: "none" }}>
                 <Globe size={13} style={{ color: "var(--se-yellow)", flexShrink: 0 }} />
                 surveyingexperts-sa.com
               </a>
-              <span style={{ display: "flex", alignItems: "center", gap: "0.5rem", fontSize: "var(--text-sm)", color: "rgba(255,255,255,0.7)" }}>
+              <span style={{ display: "flex", alignItems: "center", gap: "0.5rem", fontSize: "var(--text-sm)", color: "#CFE3EC" }}>
                 <MapPin size={13} style={{ color: "var(--se-yellow)", flexShrink: 0 }} />
                 الرياض، المملكة العربية السعودية | 5 فروع
               </span>
@@ -151,7 +151,7 @@ export function FooterAr() {
                     display: "flex", alignItems: "center", justifyContent: "center",
                     width: 36, height: 36, borderRadius: "var(--radius-md)",
                     background: "rgba(255,255,255,0.08)",
-                    color: "rgba(255,255,255,0.65)",
+                    color: "#CCDFE9",
                     border: "1px solid rgba(255,255,255,0.08)",
                   }}
                   onMouseEnter={(e) => {
@@ -163,7 +163,7 @@ export function FooterAr() {
                   onMouseLeave={(e) => {
                     const el = e.currentTarget as HTMLElement;
                     el.style.background = "rgba(255,255,255,0.08)";
-                    el.style.color = "rgba(255,255,255,0.65)";
+                    el.style.color = "#CCDFE9";
                     el.style.borderColor = "rgba(255,255,255,0.08)";
                   }}
                 >
@@ -176,7 +176,7 @@ export function FooterAr() {
           {/* Link cols */}
           {Object.entries(footerLinks).map(([group, links]) => (
             <div key={group}>
-              <h4 style={{ fontSize: "var(--text-xs)", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.12em", color: "rgba(255,255,255,0.4)", marginBottom: "1rem" }}>
+              <h4 style={{ fontSize: "var(--text-xs)", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.12em", color: "#A3C3D8", marginBottom: "1rem" }}>
                 {group}
               </h4>
               <ul style={{ listStyle: "none", margin: 0, padding: 0, display: "flex", flexDirection: "column", gap: "0.5rem" }}>
@@ -187,9 +187,9 @@ export function FooterAr() {
                         href={link.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        style={{ display: "inline-flex", alignItems: "center", gap: "0.3rem", fontSize: "var(--text-sm)", color: "rgba(255,255,255,0.6)", textDecoration: "none" }}
+                        style={{ display: "inline-flex", alignItems: "center", gap: "0.3rem", fontSize: "var(--text-sm)", color: "#C5DAE6", textDecoration: "none" }}
                         onMouseEnter={(e) => (e.currentTarget.style.color = "var(--se-yellow)")}
-                        onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.6)")}
+                        onMouseLeave={(e) => (e.currentTarget.style.color = "#C5DAE6")}
                       >
                         {link.label}
                         <ExternalLink size={11} />
@@ -197,9 +197,9 @@ export function FooterAr() {
                     ) : (
                       <Link
                         href={link.href}
-                        style={{ fontSize: "var(--text-sm)", color: "rgba(255,255,255,0.6)", textDecoration: "none" }}
+                        style={{ fontSize: "var(--text-sm)", color: "#C5DAE6", textDecoration: "none" }}
                         onMouseEnter={(e) => (e.currentTarget.style.color = "var(--se-yellow)")}
-                        onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.6)")}
+                        onMouseLeave={(e) => (e.currentTarget.style.color = "#C5DAE6")}
                       >
                         {link.label}
                       </Link>
@@ -224,19 +224,19 @@ export function FooterAr() {
         >
           <div>
             <div style={{ fontSize: 11, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.1em", color: "rgba(255,255,255,0.3)", marginBottom: 4 }}>الاسم القانوني</div>
-            <div style={{ fontSize: 12, color: "rgba(255,255,255,0.5)" }}>شركة خبراء المساحة الفنية للاستثمار</div>
+            <div style={{ fontSize: 12, color: "#B4CEDF" }}>شركة خبراء المساحة الفنية للاستثمار</div>
           </div>
           <div>
             <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.1em", color: "rgba(255,255,255,0.3)", marginBottom: 4 }}>رقم السجل التجاري</div>
-            <div style={{ fontSize: 12, color: "rgba(255,255,255,0.5)" }}>1009010757</div>
+            <div style={{ fontSize: 12, color: "#B4CEDF" }}>1009010757</div>
           </div>
           <div>
             <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.1em", color: "rgba(255,255,255,0.3)", marginBottom: 4 }}>الرقم الوطني الموحد</div>
-            <div style={{ fontSize: 12, color: "rgba(255,255,255,0.5)" }}>7035999759</div>
+            <div style={{ fontSize: 12, color: "#B4CEDF" }}>7035999759</div>
           </div>
           <div>
             <div style={{ fontSize: 11, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.1em", color: "rgba(255,255,255,0.3)", marginBottom: 4 }}>العنوان</div>
-            <div style={{ fontSize: 12, color: "rgba(255,255,255,0.5)" }}>الرياض · حي الملز · شارع صلاح الدين الأيوبي</div>
+            <div style={{ fontSize: 12, color: "#B4CEDF" }}>الرياض · حي الملز · شارع صلاح الدين الأيوبي</div>
           </div>
         </div>
 

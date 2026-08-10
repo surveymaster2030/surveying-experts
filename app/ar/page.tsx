@@ -23,10 +23,9 @@ export const metadata: Metadata = {
 };
 
 function IconTile({ children, color = "teal", size = 44 }: { children: React.ReactNode; color?: "teal" | "blue" | "yellow"; size?: number }) {
-  const bg = color === "teal" ? "var(--se-teal)" : color === "blue" ? "var(--se-blue)" : "var(--accent)";
   const fg = color === "yellow" ? "var(--se-blue-dark)" : "#fff";
   return (
-    <div style={{ width: size, height: size, borderRadius: "var(--radius-md)", background: bg, color: fg, display: "grid", placeItems: "center", flexShrink: 0 }}>
+    <div style={{ width: size, height: size, borderRadius: "var(--radius-md)", color: fg, display: "grid", placeItems: "center", flexShrink: 0 }}>
       {children}
     </div>
   );
@@ -34,7 +33,7 @@ function IconTile({ children, color = "teal", size = 44 }: { children: React.Rea
 
 function TealChip({ label }: { label: string }) {
   return (
-    <span style={{ display: "inline-block", fontFamily: "var(--font-sans)", fontSize: 12, fontWeight: 600, padding: "4px 10px", borderRadius: "var(--radius-pill)", background: "var(--se-teal-soft)", color: "var(--se-teal)", border: "1px solid rgba(34,167,168,0.2)", whiteSpace: "nowrap" }}>
+    <span style={{ display: "inline-block", fontFamily: "var(--font-sans)", fontSize: 12, fontWeight: 600, padding: "4px 10px", color: "var(--se-teal)", border: "1px solid rgba(34,167,168,0.2)", whiteSpace: "nowrap" }}>
       {label}
     </span>
   );
@@ -42,9 +41,8 @@ function TealChip({ label }: { label: string }) {
 
 function Eyebrow({ children, light, teal }: { children: React.ReactNode; light?: boolean; teal?: boolean }) {
   const color = light ? "var(--accent)" : teal ? "var(--se-teal)" : "var(--se-blue)";
-  const bg = light ? "rgba(246,186,59,0.12)" : teal ? "rgba(34,167,168,0.15)" : "var(--se-yellow-soft)";
   return (
-    <span style={{ display: "inline-block", fontFamily: "var(--font-sans)", fontSize: 12, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.18em", color, background: bg, padding: "0.35em 0.85em", borderRadius: "var(--radius-pill)", marginBottom: "1.25rem" }}>
+    <span style={{ display: "inline-block", fontFamily: "var(--font-sans)", fontSize: 12, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.18em", color, marginBottom: "1.25rem" }}>
       {children}
     </span>
   );
@@ -57,7 +55,7 @@ function SecHead({ label, title, subtitle, light, centered }: { label?: string; 
       <h2 style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "clamp(1.625rem, 3vw, 2.25rem)", color: light ? "#fff" : "var(--text-strong)", lineHeight: 1.1, letterSpacing: "-0.02em", margin: label ? "0.5rem 0 0.875rem" : "0 0 0.875rem" }}>
         {title}
       </h2>
-      {subtitle && <p style={{ fontFamily: "var(--font-sans)", fontSize: "var(--text-md)", color: light ? "rgba(255,255,255,0.65)" : "var(--text-muted)", lineHeight: 1.65, maxWidth: centered ? "58ch" : undefined, margin: centered ? "0 auto" : 0 }}>{subtitle}</p>}
+      {subtitle && <p style={{ fontFamily: "var(--font-sans)", fontSize: "var(--text-md)", color: light ? "#CCDFE9" : "var(--text-muted)", lineHeight: 1.65, maxWidth: centered ? "58ch" : undefined, margin: centered ? "0 auto" : 0 }}>{subtitle}</p>}
     </div>
   );
 }
@@ -84,24 +82,24 @@ const usps = [
 ];
 
 const teamRoles = [
-  { icon: <Briefcase size={20} />, title: "مهندسو المبيعات", text: "يتولون استشارة المعدات وعروض الأسعار وطلبات المتجر الإلكتروني وتنسيق المشتريات.", imgSrc: "/images/photos/showroom-interior.jpg" },
-  { icon: <Wrench size={20} />, title: "مهندسو الصيانة", text: "مسؤولون عن فحص الأجهزة وخدمتها ومعايرتها والرعاية التقنية بعد الشراء.", imgSrc: "/images/photos/gnss-receiver.jpg" },
-  { icon: <Settings size={20} />, title: "مهندسو الدعم الفني", text: "يدعمون العملاء في الإعداد والتوجيه التشغيلي واستكشاف الأعطال عبر جميع المعدات المدعومة.", imgSrc: "/images/photos/gnss-ertk25.jpg" },
-  { icon: <Layers size={20} />, title: "التسويق وتقنية المعلومات والمالية", text: "النواة التشغيلية التي تدعم التواصل والبنية التحتية الرقمية واستمرارية الأعمال.", imgSrc: "/images/photos/team-culture.jpg" },
+  { icon: <Briefcase size={20} />, title: "مهندسو المبيعات", text: "يتولون استشارة المعدات وعروض الأسعار وطلبات المتجر الإلكتروني وتنسيق المشتريات.", imgSrc: "/images/photos/team-sales-engineers.png" },
+  { icon: <Wrench size={20} />, title: "مهندسو الصيانة", text: "مسؤولون عن فحص الأجهزة وخدمتها ومعايرتها والرعاية التقنية بعد الشراء.", imgSrc: "/images/photos/team-maintenance-engineers.png" },
+  { icon: <Settings size={20} />, title: "مهندسو الدعم الفني", text: "يدعمون العملاء في الإعداد والتوجيه التشغيلي واستكشاف الأعطال عبر جميع المعدات المدعومة.", imgSrc: "/images/photos/team-technical-support.png" },
+  { icon: <Layers size={20} />, title: "التسويق وتقنية المعلومات والمالية", text: "النواة التشغيلية التي تدعم التواصل والبنية التحتية الرقمية واستمرارية الأعمال.", imgSrc: "/images/photos/team-marketing-finance.png" },
 ];
 
 const industries = [
-  { icon: <HardHat size={18} />, name: "المقاولون الإنشائيون", text: "للتخطيط الميداني والتسوية والحفر والتعديل ومتابعة التقدم وجاهزية المعدات.", solutions: ["GNSS & RTK", "توتال ستيشن", "تحكم الآلات", "رسم الخرائط الجوي"], imgSrc: "/images/photos/slam-scanning.jpg" },
-  { icon: <Compass size={18} />, name: "مكاتب المساحة", text: "لقياسات يومية موثوقة وأجهزة دقيقة وملحقات ومعايرة ودعم متكامل.", solutions: ["GNSS & RTK", "توتال ستيشن", "مسح ثلاثي الأبعاد", "رسم الخرائط الجوي"], imgSrc: "/images/photos/gnss-receiver.jpg" },
-  { icon: <PenTool size={18} />, name: "الاستشارات الهندسية", text: "لتوثيق المواقع والتحقق من التنفيذ والفحص والتقارير وبيانات الميدان الدقيقة.", solutions: ["توتال ستيشن", "GNSS & RTK", "مسح ثلاثي الأبعاد", "كشف تحت الأرض"], imgSrc: "/images/photos/gnss-ertk25.jpg" },
-  { icon: <GitBranch size={18} />, name: "البنية التحتية والطرق", text: "للتحديد الموضعي والتحكم والتعديل ورسم الخرائط ومراقبة التقدم والعمل الميداني الممتد.", solutions: ["GNSS & RTK", "تحكم الآلات", "توتال ستيشن", "رسم الخرائط الجوي"], imgSrc: "/images/photos/showroom-brand.jpg" },
+  { icon: <HardHat size={18} />, name: "المقاولون الإنشائيون", text: "للتخطيط الميداني والتسوية والحفر والتعديل ومتابعة التقدم وجاهزية المعدات.", solutions: ["GNSS & RTK", "توتال ستيشن", "تحكم الآلات", "رسم الخرائط الجوي"], imgSrc: "/images/photos/industry-engineering-gnss.png", imgPos: "center 40%" },
+  { icon: <Compass size={18} />, name: "مكاتب المساحة", text: "لقياسات يومية موثوقة وأجهزة دقيقة وملحقات ومعايرة ودعم متكامل.", solutions: ["GNSS & RTK", "توتال ستيشن", "مسح ثلاثي الأبعاد", "رسم الخرائط الجوي"], imgSrc: "/images/photos/industry-surveying-total-station.png", imgPos: "center 40%" },
+  { icon: <PenTool size={18} />, name: "الاستشارات الهندسية", text: "لتوثيق المواقع والتحقق من التنفيذ والفحص والتقارير وبيانات الميدان الدقيقة.", solutions: ["توتال ستيشن", "GNSS & RTK", "مسح ثلاثي الأبعاد", "كشف تحت الأرض"], imgSrc: "/images/photos/industry-construction-scanner.png", imgPos: "center 35%" },
+  { icon: <GitBranch size={18} />, name: "البنية التحتية والطرق", text: "للتحديد الموضعي والتحكم والتعديل ورسم الخرائط ومراقبة التقدم والعمل الميداني الممتد.", solutions: ["GNSS & RTK", "تحكم الآلات", "توتال ستيشن", "رسم الخرائط الجوي"], imgSrc: "/images/photos/industry-infrastructure-gpr.png", imgPos: "center 55%" },
 ];
 
 const highSolutions = [
-  { icon: <ScanLine size={22} />, title: "الماسحات الضوئية وتصوير الواقع ثلاثي الأبعاد", short: "التقاط البيئات الحقيقية كبيانات رقمية دقيقة للتوثيق والتحليل وسير عمل التصميم.", imgSrc: "/images/photos/slam-scanning.jpg" },
-  { icon: <Plane size={22} />, title: "الطائرات المسيرة ورسم الخرائط الجوي", short: "تغطية مساحات واسعة بسرعة أكبر ببيانات جوية للرسم والتفتيش والمراقبة والتوثيق.", imgSrc: "/images/photos/gnss-ertk25.jpg" },
-  { icon: <Waves size={22} />, title: "المسح البحري", short: "مسح البيئات المائية باستخدام تقنيات هيدروغرافية لقياس الأعماق وجمع البيانات البحرية.", imgSrc: "/images/photos/gnss-receiver.jpg" },
-  { icon: <Radar size={22} />, title: "الرادار الأرضي والكشف تحت الأرض", short: "الكشف عن التفاصيل المخفية تحت السطح ورسم خرائطها قبل الحفر أو البناء أو أعمال البنية التحتية.", imgSrc: "/images/photos/showroom-brand.jpg" },
+  { icon: <ScanLine size={22} />, title: "الماسحات الضوئية وتصوير الواقع ثلاثي الأبعاد", short: "التقاط البيئات الحقيقية كبيانات رقمية دقيقة للتوثيق والتحليل وسير عمل التصميم.", imgSrc: "/images/photos/slam-scanning.jpg", imgPos: "center center" },
+  { icon: <Plane size={22} />, title: "الطائرات المسيرة ورسم الخرائط الجوي", short: "تغطية مساحات واسعة بسرعة أكبر ببيانات جوية للرسم والتفتيش والمراقبة والتوثيق.", imgSrc: "/images/photos/advanced-drone-mapping.jpg", imgPos: "center 45%" },
+  { icon: <Waves size={22} />, title: "المسح البحري", short: "مسح البيئات المائية باستخدام تقنيات هيدروغرافية لقياس الأعماق وجمع البيانات البحرية.", imgSrc: "/images/photos/advanced-marine-surveying.png", imgPos: "center 65%" },
+  { icon: <Radar size={22} />, title: "الرادار الأرضي والكشف تحت الأرض", short: "الكشف عن التفاصيل المخفية تحت السطح ورسم خرائطها قبل الحفر أو البناء أو أعمال البنية التحتية.", imgSrc: "/images/photos/advanced-gpr-detection.png", imgPos: "center 82%" },
 ];
 
 const partners = [
@@ -109,15 +107,31 @@ const partners = [
   { name: "Survey Master", category: "توتال ستيشن وبحري", logo: "/images/brands/survey-master.png" },
   { name: "Radarteam", category: "الرادار الأرضي والكشف", logo: "/images/brands/radarteam.png" },
   { name: "OmniSLAM", category: "مسح ثلاثي الأبعاد", logo: "/images/brands/omnislam.png" },
-  { name: "The Drone Center", category: "رسم الخرائط الجوي", logo: null },
   { name: "DJI", category: "تقنيات الطائرات المسيرة", logo: null },
-  { name: "Quantum Systems", category: "طائرات مسيرة متقدمة", logo: null },
 ];
 
 const clientLogos = [
-  "Expert", "Mapa", "SNAD", "Alfawaz Contracting", "Qemmet Alrawasi",
-  "Darkstone", "Buna", "Enjazco", "Modern Building Leader",
-  "First Fix", "Al Saif Engineering", "Trading Development Partnership",
+  { name: "Mapa", logo: "/images/partners/mapa.png" },
+  { name: "ESNAD", logo: "/images/partners/esnad.png" },
+  { name: "Darkstone", logo: "/images/partners/darkstone.png" },
+  { name: "Al Saif Engineering", logo: "/images/partners/el-seif.png" },
+  { name: "Iron Rock", logo: "/images/partners/iron-rock.jpg" },
+  { name: "Aitco", logo: "/images/partners/aitco.jpg" },
+  { name: "Salini", logo: "/images/partners/salini.jpg" },
+  { name: "Rawaf", logo: "/images/partners/rawaf.png" },
+  { name: "Almajal", logo: "/images/partners/almajal.jpg" },
+  { name: "Emaar Irshadiya", logo: "/images/partners/emaar-irshadiya.jpg" },
+  { name: "Nimal", logo: "/images/partners/nimal.jpg" },
+  { name: "Ibdaa Saudi", logo: "/images/partners/ibdaa-saudi.jpg" },
+  { name: "Buna Al Jazira", logo: "/images/partners/buna-al-jazira.png" },
+  { name: "Dar Al Izza", logo: "/images/partners/dar-al-izza.jpg" },
+  { name: "Awtad", logo: "/images/partners/awtad.jpg" },
+  { name: "Najmat Al Sukhoor", logo: "/images/partners/najmat-al-sukhoor.jpg" },
+  { name: "Asasiyat Al Turuq", logo: "/images/partners/asasiyat.jpg" },
+  { name: "Zaid Alhussain", logo: "/images/partners/zaid-alhussain.png" },
+  { name: "Khabeer Shafafiya", logo: "/images/partners/khabeer-shafafiya.png" },
+  { name: "Agoda", logo: "/images/partners/agoda.png" },
+  { name: "Ada", logo: "/images/partners/ada.png" },
 ];
 
 const timeline = [
@@ -149,7 +163,6 @@ export default function ArHomePage() {
       {/* ── من نحن ── */}
       <section
         style={{
-          background: "var(--se-white)",
           position: "relative",
           overflow: "hidden",
           padding: "96px 0",
@@ -168,7 +181,7 @@ export default function ArHomePage() {
               <p style={{ fontFamily: "var(--font-sans)", fontSize: 16, lineHeight: 1.8, color: "var(--text-muted)", margin: "0 0 28px" }}>
                 هدفنا واضح: مساعدة كل عميل على اختيار المعدات المناسبة واستخدامها بثقة تامة.
               </p>
-              <Link href="/ar/about" className="se-btn" style={{ display: "inline-flex", alignItems: "center", gap: 8, padding: "11px 20px", background: "var(--se-blue-soft)", color: "var(--se-blue)", fontWeight: 700, fontSize: 15, borderRadius: "var(--radius-md)", border: "1.5px solid var(--se-blue)", textDecoration: "none" }}>
+              <Link href="/ar/about" className="se-btn" style={{ display: "inline-flex", alignItems: "center", gap: 8, padding: "11px 20px", color: "var(--se-blue)", fontWeight: 700, fontSize: 15, borderRadius: "var(--radius-md)", border: "1.5px solid var(--se-blue)", textDecoration: "none" }}>
                 <ArrowLeft size={15} /> اعرف أكثر عنا
               </Link>
             </AnimateIn>
@@ -199,24 +212,24 @@ export default function ArHomePage() {
                   >
                     <img src="/images/photos/branch-storefront.jpg" alt="" loading="lazy" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }} />
                     <div aria-hidden style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(13,22,30,0.92) 0%, rgba(13,22,30,0.4) 55%, rgba(13,22,30,0.15) 100%)" }} />
-                    <div style={{ position: "absolute", top: 18, left: 18, background: "var(--accent)", borderRadius: "var(--radius-md)", padding: "6px 12px", textAlign: "center" }}>
+                    <div style={{ position: "absolute", top: 18, left: 18, borderRadius: "var(--radius-md)", padding: "6px 12px", textAlign: "center" }}>
                       <div style={{ fontWeight: 800, fontSize: 26, color: "var(--se-blue-dark)", lineHeight: 1, letterSpacing: "-0.02em" }}>+7</div>
-                      <div style={{ fontSize: 10, color: "var(--se-blue-dark)", opacity: 0.75, marginTop: 1 }}>سنوات</div>
+                      <div style={{ fontSize: 10, color: "var(--se-blue-dark)", marginTop: 1 }}>سنوات</div>
                     </div>
                     <div style={{ position: "relative", padding: "0 20px 22px" }}>
                       <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 8 }}>
-                        <div style={{ width: 32, height: 32, borderRadius: "var(--radius-md)", background: "var(--se-teal)", color: "#fff", display: "grid", placeItems: "center", flexShrink: 0 }}>
+                        <div style={{ width: 32, height: 32, borderRadius: "var(--radius-md)", color: "#fff", display: "grid", placeItems: "center", flexShrink: 0 }}>
                           <ShieldCheck size={15} />
                         </div>
                         <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: "0.08em", color: "var(--se-teal)" }}>ISO 9001:2015</div>
                       </div>
                       <div style={{ fontWeight: 700, fontSize: 16, color: "#fff", marginBottom: 4 }}>جودة معتمدة دولياً</div>
-                      <div style={{ fontSize: 12, color: "rgba(255,255,255,0.6)", lineHeight: 1.6 }}>كل جهاز مدعوم وتتم صيانته ومعايرته وفق المعايير الدولية.</div>
+                      <div style={{ fontSize: 12, color: "#C5DAE6", lineHeight: 1.6 }}>كل جهاز مدعوم وتتم صيانته ومعايرته وفق المعايير الدولية.</div>
                     </div>
                   </div>
                 </AnimateIn>
                 <AnimateIn from="scale" delay={400}>
-                  <div style={{ height: "100%", borderRadius: "var(--radius-xl)", background: "var(--accent)", display: "flex", alignItems: "center", justifyContent: "center", padding: 16 }}>
+                  <div style={{ height: "100%", borderRadius: "var(--radius-xl)", display: "flex", alignItems: "center", justifyContent: "center", padding: 16 }}>
                     <div style={{ textAlign: "center" }}>
                       <div style={{ fontFamily: "var(--font-sans)", fontWeight: 800, fontSize: 38, color: "var(--se-blue-dark)", lineHeight: 1, letterSpacing: "-0.02em" }}>+3K</div>
                       <div style={{ fontFamily: "var(--font-sans)", fontWeight: 600, fontSize: 13, color: "var(--se-blue-dark)", marginTop: 4 }}>عميل B2B</div>
@@ -236,9 +249,6 @@ export default function ArHomePage() {
           position: "relative",
           overflow: "hidden",
           padding: "96px 0",
-          backgroundImage:
-            "linear-gradient(rgba(34,167,168,0.05) 1px,transparent 1px),linear-gradient(90deg,rgba(34,167,168,0.05) 1px,transparent 1px)",
-          backgroundSize: "36px 36px",
         }}
       >
         <div className="se-container" style={{ position: "relative" }}>
@@ -275,10 +285,10 @@ export default function ArHomePage() {
                 return (
                   <div key={s.title} style={{ position: "absolute", top: `${y}%`, left: `${x}%`, transform: "translate(-50%,-50%)", width: 128, display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center" }}>
                     <div style={{ position: "relative", marginBottom: 8 }}>
-                      <div className="se-glow-teal" style={{ width: 58, height: 58, borderRadius: "50%", background: "var(--se-blue-darker)", border: "2px solid var(--se-teal)", color: "var(--se-teal)", display: "grid", placeItems: "center", boxShadow: "0 4px 18px rgba(0,0,0,0.35)", transition: "transform 0.2s, box-shadow 0.2s" }}>
+                      <div className="se-glow-teal" style={{ width: 58, height: 58, borderRadius: "50%", border: "2px solid var(--se-teal)", color: "var(--se-teal)", display: "grid", placeItems: "center", boxShadow: "0 4px 18px rgba(0,0,0,0.35)", transition: "transform 0.2s, box-shadow 0.2s" }}>
                         {s.icon}
                       </div>
-                      <div style={{ position: "absolute", top: -4, insetInlineEnd: -4, width: 20, height: 20, borderRadius: "50%", background: "var(--se-teal)", display: "grid", placeItems: "center" }}>
+                      <div style={{ position: "absolute", top: -4, insetInlineEnd: -4, width: 20, height: 20, borderRadius: "50%", display: "grid", placeItems: "center" }}>
                         <span style={{ fontFamily: "var(--font-mono)", fontWeight: 700, fontSize: 9, color: "#fff" }}>{s.n}</span>
                       </div>
                     </div>
@@ -293,8 +303,8 @@ export default function ArHomePage() {
           <div className="kit-mobile-only" style={{ flexDirection: "column", gap: 8, marginTop: 16 }}>
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 8 }}>
               {support360.map((s) => (
-                <div key={s.title} style={{ display: "flex", gap: 10, alignItems: "center", background: "rgba(255,255,255,0.04)", border: "1px solid rgba(34,167,168,0.18)", borderRadius: "var(--radius-md)", padding: "12px 14px" }}>
-                  <div style={{ width: 36, height: 36, flexShrink: 0, borderRadius: "50%", background: "var(--se-teal)", color: "#fff", display: "grid", placeItems: "center" }}>{s.icon}</div>
+                <div key={s.title} style={{ display: "flex", gap: 10, alignItems: "center", background: "rgba(255,255,255,0.07)", border: "1px solid rgba(34,167,168,0.25)", borderRadius: "var(--radius-md)", padding: "12px 14px" }}>
+                  <div style={{ width: 36, height: 36, flexShrink: 0, borderRadius: "50%", background: "rgba(34,167,168,0.2)", border: "1px solid rgba(34,167,168,0.4)", color: "var(--se-teal)", display: "grid", placeItems: "center" }}>{s.icon}</div>
                   <div>
                     <div style={{ fontFamily: "var(--font-mono)", fontWeight: 700, fontSize: 10, color: "var(--se-teal)", marginBottom: 2 }}>{s.n}</div>
                     <div style={{ fontFamily: "var(--font-sans)", fontWeight: 700, fontSize: 12, color: "#fff", lineHeight: 1.3 }}>{s.title}</div>
@@ -309,7 +319,6 @@ export default function ArHomePage() {
       {/* ── لماذا تختارنا ── */}
       <section
         style={{
-          background: "var(--se-gray-50)",
           position: "relative",
           overflow: "hidden",
           padding: "96px 0",
@@ -327,7 +336,7 @@ export default function ArHomePage() {
                 <div
                   className="kit-card-teal"
                   style={{
-                    background: "var(--se-white)",
+                    background: "var(--surface-card)",
                     border: "1px solid var(--border-subtle)",
                     borderRadius: "var(--radius-lg)",
                     padding: "24px 22px",
@@ -361,7 +370,7 @@ export default function ArHomePage() {
       </section>
 
       {/* ── فريق الخبراء ── */}
-      <section style={{ background: "var(--se-white)", padding: "96px 0" }}>
+      <section style={{ padding: "96px 0" }}>
         <div className="se-container">
           <AnimateIn>
             <SecHead
@@ -393,7 +402,7 @@ export default function ArHomePage() {
                   />
                   <div style={{ padding: "20px 22px" }}>
                     <div style={{ fontFamily: "var(--font-sans)", fontWeight: 700, fontSize: 16, color: "#fff", marginBottom: 8 }}>{r.title}</div>
-                    <div style={{ fontFamily: "var(--font-sans)", fontSize: 14, lineHeight: 1.65, color: "rgba(255,255,255,0.62)" }}>{r.text}</div>
+                    <div style={{ fontFamily: "var(--font-sans)", fontSize: 14, lineHeight: 1.65, color: "#C5DAE6" }}>{r.text}</div>
                   </div>
                 </div>
               </AnimateIn>
@@ -401,7 +410,7 @@ export default function ArHomePage() {
           </div>
           <AnimateIn delay={200}>
             <div style={{ textAlign: "center", marginTop: 32 }}>
-              <Link href="/ar/about" className="se-btn" style={{ display: "inline-flex", alignItems: "center", gap: 8, padding: "11px 20px", background: "var(--se-blue-soft)", color: "var(--se-blue)", fontWeight: 700, fontSize: 15, borderRadius: "var(--radius-md)", border: "1.5px solid var(--se-blue)", textDecoration: "none" }}>
+              <Link href="/ar/about" className="se-btn" style={{ display: "inline-flex", alignItems: "center", gap: 8, padding: "11px 20px", color: "var(--se-blue)", fontWeight: 700, fontSize: 15, borderRadius: "var(--radius-md)", border: "1.5px solid var(--se-blue)", textDecoration: "none" }}>
                 <ArrowLeft size={15} /> تعرف على فريقنا
               </Link>
             </div>
@@ -412,7 +421,6 @@ export default function ArHomePage() {
       {/* ── الحلول حسب القطاع ── */}
       <section
         style={{
-          background: "var(--se-gray-50)",
           position: "relative",
           overflow: "hidden",
           padding: "96px 0",
@@ -437,7 +445,6 @@ export default function ArHomePage() {
                   className="kit-card-teal"
                   style={{
                     display: "block",
-                    background: "var(--se-white)",
                     border: "1px solid var(--border-subtle)",
                     borderRadius: "var(--radius-lg)",
                     overflow: "hidden",
@@ -446,7 +453,7 @@ export default function ArHomePage() {
                     height: "100%",
                   }}
                 >
-                  <ImagePlaceholder src={ind.imgSrc} alt={ind.name} height={100} borderRadius="0" style={{ width: "100%" }} />
+                  <ImagePlaceholder src={ind.imgSrc} alt={ind.name} height={100} borderRadius="0" style={{ width: "100%" }} objectPosition={ind.imgPos} />
                   <div style={{ padding: "18px 20px" }}>
                     <div style={{ fontFamily: "var(--font-sans)", fontWeight: 700, fontSize: 16, color: "var(--text-strong)", marginBottom: 8 }}>{ind.name}</div>
                     <p style={{ fontFamily: "var(--font-sans)", fontSize: 13, lineHeight: 1.65, color: "var(--text-muted)", margin: "0 0 14px" }}>{ind.text}</p>
@@ -461,7 +468,7 @@ export default function ArHomePage() {
           </div>
           <AnimateIn delay={200}>
             <div style={{ textAlign: "center", marginTop: 28 }}>
-              <Link href="/ar/solutions" className="se-btn" style={{ display: "inline-flex", alignItems: "center", gap: 8, padding: "11px 20px", background: "var(--se-blue-soft)", color: "var(--se-blue)", fontWeight: 700, fontSize: 15, borderRadius: "var(--radius-md)", border: "1.5px solid var(--se-blue)", textDecoration: "none" }}>
+              <Link href="/ar/solutions" className="se-btn" style={{ display: "inline-flex", alignItems: "center", gap: 8, padding: "11px 20px", color: "var(--se-blue)", fontWeight: 700, fontSize: 15, borderRadius: "var(--radius-md)", border: "1.5px solid var(--se-blue)", textDecoration: "none" }}>
                 <ArrowLeft size={15} /> استكشف جميع الحلول حسب القطاع
               </Link>
             </div>
@@ -472,14 +479,13 @@ export default function ArHomePage() {
       {/* ── الحلول المتقدمة ── */}
       <section
         style={{
-          background: "var(--se-blue-darker)",
+          background: "var(--se-blue-dark)",
           position: "relative",
           overflow: "hidden",
           padding: "96px 0",
         }}
       >
         <div aria-hidden style={{ position: "absolute", inset: 0, backgroundImage: "radial-gradient(circle, rgba(34,167,168,0.3) 1.5px, transparent 1.5px), radial-gradient(circle, rgba(34,167,168,0.12) 1px, transparent 1px)", backgroundSize: "60px 60px, 36px 36px", backgroundPosition: "0 0, 28px 18px", opacity: 0.6 }} />
-        <div aria-hidden style={{ position: "absolute", inset: 0, backgroundImage: "linear-gradient(rgba(34,167,168,0.05) 1px,transparent 1px),linear-gradient(90deg,rgba(34,167,168,0.05) 1px,transparent 1px)", backgroundSize: "36px 36px" }} />
         <div className="se-container" style={{ position: "relative" }}>
           <AnimateIn>
             <SecHead
@@ -496,16 +502,15 @@ export default function ArHomePage() {
                 <div
                   className="kit-hs-card"
                   style={{
-                    background: "rgba(34,167,168,0.06)",
                     border: "1px solid rgba(34,167,168,0.22)",
                     borderRadius: "var(--radius-xl)",
                     overflow: "hidden",
                   }}
                 >
-                  <ImagePlaceholder src={h.imgSrc} alt={h.title} height={110} borderRadius="0" style={{ width: "100%" }} />
+                  <ImagePlaceholder src={h.imgSrc} alt={h.title} height={110} borderRadius="0" style={{ width: "100%" }} objectPosition={h.imgPos} />
                   <div style={{ padding: "20px 22px" }}>
                     <div style={{ fontFamily: "var(--font-sans)", fontWeight: 700, fontSize: 16, color: "#fff", marginBottom: 8, lineHeight: 1.3 }}>{h.title}</div>
-                    <div style={{ fontFamily: "var(--font-sans)", fontSize: 13, lineHeight: 1.6, color: "rgba(255,255,255,0.58)" }}>{h.short}</div>
+                    <div style={{ fontFamily: "var(--font-sans)", fontSize: 13, lineHeight: 1.6, color: "#C5DAE6" }}>{h.short}</div>
                   </div>
                 </div>
               </AnimateIn>
@@ -524,7 +529,6 @@ export default function ArHomePage() {
       {/* ── الصيانة والمعايرة ── */}
       <section
         style={{
-          background: "var(--se-white)",
           position: "relative",
           overflow: "hidden",
           padding: "96px 0",
@@ -552,7 +556,7 @@ export default function ArHomePage() {
                   </AnimateIn>
                 ))}
               </div>
-              <Link href="/ar/maintenance-calibration" className="se-btn" style={{ display: "inline-flex", alignItems: "center", gap: 8, padding: "11px 20px", background: "var(--se-blue-soft)", color: "var(--se-blue)", fontWeight: 700, fontSize: 15, borderRadius: "var(--radius-md)", border: "1.5px solid var(--se-blue)", textDecoration: "none" }}>
+              <Link href="/ar/maintenance-calibration" className="se-btn" style={{ display: "inline-flex", alignItems: "center", gap: 8, padding: "11px 20px", color: "var(--se-blue)", fontWeight: 700, fontSize: 15, borderRadius: "var(--radius-md)", border: "1.5px solid var(--se-blue)", textDecoration: "none" }}>
                 <ArrowLeft size={15} /> عرض جميع الباقات
               </Link>
             </AnimateIn>
@@ -574,7 +578,7 @@ export default function ArHomePage() {
                       <div style={{ background: pkg.featured ? "var(--se-blue)" : "var(--se-gray-50)", padding: "22px 14px", textAlign: "center" }}>
                         {pkg.featured && <div style={{ fontFamily: "var(--font-sans)", fontSize: 10, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.12em", color: "var(--accent)", marginBottom: 6 }}>الأنسب</div>}
                         <div style={{ fontFamily: "var(--font-sans)", fontWeight: 700, fontSize: 14, color: pkg.featured ? "#fff" : "var(--text-strong)", lineHeight: 1.2, marginBottom: 8 }}>{pkg.name}</div>
-                        <div style={{ fontFamily: "var(--font-sans)", fontSize: 12, color: pkg.featured ? "rgba(255,255,255,0.55)" : "var(--text-muted)" }}>خطة خدمة سنوية</div>
+                        <div style={{ fontFamily: "var(--font-sans)", fontSize: 12, color: pkg.featured ? "#BDD4E2" : "var(--text-muted)" }}>خطة خدمة سنوية</div>
                       </div>
                     </div>
                   </AnimateIn>
@@ -592,9 +596,6 @@ export default function ArHomePage() {
           position: "relative",
           overflow: "hidden",
           padding: "80px 0",
-          backgroundImage:
-            "linear-gradient(rgba(34,167,168,0.05) 1px,transparent 1px),linear-gradient(90deg,rgba(34,167,168,0.05) 1px,transparent 1px)",
-          backgroundSize: "36px 36px",
         }}
       >
         <div className="se-container" style={{ position: "relative" }}>
@@ -602,7 +603,7 @@ export default function ArHomePage() {
             <div style={{ textAlign: "center", marginBottom: 48 }}>
               <Eyebrow light>شركاء التقنية</Eyebrow>
               <h2 style={{ fontFamily: "var(--font-sans)", fontWeight: 700, fontSize: "clamp(24px,3vw,34px)", color: "#fff", margin: "14px 0 10px", letterSpacing: "-0.02em" }}>تقنيات عالمية، دعم محلي</h2>
-              <p style={{ fontFamily: "var(--font-sans)", fontSize: 16, color: "rgba(255,255,255,0.6)", maxWidth: "52ch", margin: "0 auto" }}>تقنيات مساحة ورسم خرائط واكتشاف ومسح ثلاثي الأبعاد وطائرات مسيّرة احترافية، مدعومة محلياً في جميع أنحاء المملكة العربية السعودية.</p>
+              <p style={{ fontFamily: "var(--font-sans)", fontSize: 16, color: "#C5DAE6", maxWidth: "52ch", margin: "0 auto" }}>تقنيات مساحة ورسم خرائط واكتشاف ومسح ثلاثي الأبعاد وطائرات مسيّرة احترافية، مدعومة محلياً في جميع أنحاء المملكة العربية السعودية.</p>
             </div>
           </AnimateIn>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))", gap: 14 }}>
@@ -611,7 +612,6 @@ export default function ArHomePage() {
                 <div
                   className="kit-partner-card"
                   style={{
-                    background: "var(--se-white)",
                     border: "1px solid rgba(255,255,255,0.12)",
                     borderRadius: "var(--radius-lg)",
                     padding: "20px 16px",
@@ -628,10 +628,10 @@ export default function ArHomePage() {
                     {p.logo ? (
                       <Image src={p.logo} alt={p.name} width={150} height={44} style={{ height: 44, width: "auto", maxWidth: 150, objectFit: "contain" }} />
                     ) : (
-                      <span style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 17, color: "var(--se-blue-dark)", lineHeight: 1.15 }}>{p.name}</span>
+                      <span style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 17, color: "#fff", lineHeight: 1.15 }}>{p.name}</span>
                     )}
                   </div>
-                  <span style={{ display: "inline-block", fontFamily: "var(--font-sans)", fontSize: 11, fontWeight: 600, padding: "3px 9px", borderRadius: "var(--radius-pill)", background: "var(--se-teal-soft)", color: "var(--se-teal)" }}>{p.category}</span>
+                  <span style={{ display: "inline-block", fontFamily: "var(--font-sans)", fontSize: 11, fontWeight: 600, padding: "3px 9px", color: "var(--se-teal)" }}>{p.category}</span>
                 </div>
               </AnimateIn>
             ))}
@@ -645,7 +645,6 @@ export default function ArHomePage() {
           padding: "56px 0",
           borderTop: "1px solid var(--border-subtle)",
           borderBottom: "1px solid var(--border-subtle)",
-          background: "var(--se-white)",
           overflow: "hidden",
         }}
       >
@@ -655,26 +654,26 @@ export default function ArHomePage() {
           </p>
         </AnimateIn>
         <Marquee
-          items={clientLogos.map((name) => (
+          items={clientLogos.map((c) => (
             <div
-              key={name}
+              key={c.name}
               className="kit-logo-card"
-              style={{ border: "1px solid var(--border-subtle)", borderRadius: "var(--radius-md)", padding: "12px 20px", fontFamily: "var(--font-sans)", fontWeight: 600, fontSize: 13, color: "var(--se-gray-400)", whiteSpace: "nowrap", margin: "0 8px", background: "var(--se-white)", transition: "border-color 0.2s, color 0.2s, transform 0.2s" }}
+              style={{ border: "1px solid var(--border-subtle)", borderRadius: "var(--radius-md)", padding: "10px 18px", background: "var(--surface-card)", display: "flex", alignItems: "center", justifyContent: "center", margin: "0 8px", transition: "border-color 0.2s, transform 0.2s", height: 60, minWidth: 120 }}
             >
-              {name}
+              <img src={c.logo} alt={c.name} style={{ height: 36, maxWidth: 110, objectFit: "contain", filter: "grayscale(40%)", transition: "filter 0.2s" }} />
             </div>
           ))}
           speed={46}
         />
         <div style={{ marginTop: 12 }}>
           <Marquee
-            items={[...clientLogos].reverse().map((name) => (
+            items={[...clientLogos].reverse().map((c) => (
               <div
-                key={name}
+                key={c.name}
                 className="kit-logo-card"
-                style={{ border: "1px solid var(--border-subtle)", borderRadius: "var(--radius-md)", padding: "12px 20px", fontFamily: "var(--font-sans)", fontWeight: 600, fontSize: 13, color: "var(--se-gray-400)", whiteSpace: "nowrap", margin: "0 8px", background: "var(--se-white)", transition: "border-color 0.2s, color 0.2s, transform 0.2s" }}
+                style={{ border: "1px solid var(--border-subtle)", borderRadius: "var(--radius-md)", padding: "10px 18px", background: "var(--surface-card)", display: "flex", alignItems: "center", justifyContent: "center", margin: "0 8px", transition: "border-color 0.2s, transform 0.2s", height: 60, minWidth: 120 }}
               >
-                {name}
+                <img src={c.logo} alt={c.name} style={{ height: 36, maxWidth: 110, objectFit: "contain", filter: "grayscale(40%)", transition: "filter 0.2s" }} />
               </div>
             ))}
             reverse
@@ -686,7 +685,6 @@ export default function ArHomePage() {
       {/* ── قصتنا ── */}
       <section
         style={{
-          background: "var(--se-gray-50)",
           position: "relative",
           overflow: "hidden",
           padding: "96px 0",
@@ -727,8 +725,7 @@ export default function ArHomePage() {
                     <div
                       className="se-glow-teal"
                       style={{
-                        width: 36, height: 36, borderRadius: "50%",
-                        background: "var(--se-blue)", border: "3px solid var(--accent)",
+                        width: 36, height: 36, borderRadius: "50%", border: "3px solid var(--accent)",
                         color: "#fff", display: "grid", placeItems: "center",
                         position: "relative", zIndex: 1, marginBottom: 10, flexShrink: 0,
                         transition: "transform 0.2s, box-shadow 0.2s",
@@ -738,8 +735,7 @@ export default function ArHomePage() {
                     </div>
                     <div style={{ fontFamily: "var(--font-sans)", fontWeight: 800, fontSize: 18, color: "var(--accent)", marginBottom: 6, letterSpacing: "-0.02em", lineHeight: 1 }}>{t.year}</div>
                     <div
-                      style={{
-                        background: "var(--se-white)", border: "1px solid var(--border-subtle)",
+                      style={{ background: "var(--surface-card)", border: "1px solid var(--border-subtle)",
                         borderRadius: "var(--radius-md)", padding: "10px 8px",
                         boxShadow: "var(--shadow-xs)", textAlign: "center", width: "100%",
                         transition: "border-color 0.2s, box-shadow 0.2s",
@@ -754,7 +750,7 @@ export default function ArHomePage() {
           </AnimateIn>
           <AnimateIn delay={200}>
             <div style={{ textAlign: "center", marginTop: 32 }}>
-              <Link href="/ar/story" className="se-btn" style={{ display: "inline-flex", alignItems: "center", gap: 8, padding: "11px 20px", background: "var(--se-blue-soft)", color: "var(--se-blue)", fontWeight: 700, fontSize: 15, borderRadius: "var(--radius-md)", border: "1.5px solid var(--se-blue)", textDecoration: "none" }}>
+              <Link href="/ar/story" className="se-btn" style={{ display: "inline-flex", alignItems: "center", gap: 8, padding: "11px 20px", color: "var(--se-blue)", fontWeight: 700, fontSize: 15, borderRadius: "var(--radius-md)", border: "1.5px solid var(--se-blue)", textDecoration: "none" }}>
                 <ArrowLeft size={15} /> اقرأ قصتنا
               </Link>
             </div>
@@ -769,20 +765,20 @@ export default function ArHomePage() {
           <AnimateIn>
             <div style={{ display: "grid", gridTemplateColumns: "auto 1fr", gap: 32, alignItems: "center", direction: "rtl" }} className="kit-2col">
               <div style={{ flexShrink: 0 }}>
-                <Link href="/ar/referral-program" style={{ display: "inline-flex", alignItems: "center", gap: 8, padding: "13px 26px", background: "var(--se-teal)", color: "#fff", fontFamily: "var(--font-sans)", fontWeight: 700, fontSize: 15, borderRadius: "var(--radius-md)", textDecoration: "none", whiteSpace: "nowrap", boxShadow: "0 4px 20px rgba(34,167,168,0.3)" }}>
+                <Link href="/ar/referral-program" style={{ display: "inline-flex", alignItems: "center", gap: 8, padding: "13px 26px", color: "#fff", background: "var(--se-teal)", fontFamily: "var(--font-sans)", fontWeight: 700, fontSize: 15, borderRadius: "var(--radius-md)", textDecoration: "none", whiteSpace: "nowrap", boxShadow: "0 4px 20px rgba(34,167,168,0.3)" }}>
                   <ArrowLeft size={16} />
                   انضم لقائمة الانتظار
                 </Link>
               </div>
               <div style={{ textAlign: "right" }}>
-                <span style={{ display: "inline-flex", alignItems: "center", gap: 7, background: "rgba(246,186,59,0.15)", border: "1px solid rgba(246,186,59,0.4)", color: "#f6ba3b", fontFamily: "var(--font-sans)", fontSize: 11, fontWeight: 700, letterSpacing: "0.1em", padding: "0.3em 0.85em", borderRadius: "var(--radius-pill)", marginBottom: 14 }}>
+                <span style={{ display: "inline-flex", alignItems: "center", gap: 7, background: "var(--accent)", color: "var(--se-blue-dark)", fontFamily: "var(--font-sans)", fontSize: 11, fontWeight: 700, letterSpacing: "0.1em", padding: "0.3em 0.85em", borderRadius: "var(--radius-sm)", marginBottom: 14 }}>
                   <span style={{ width: 6, height: 6, borderRadius: "50%", background: "currentColor", display: "inline-block" }} />
                   قريباً
                 </span>
                 <h3 style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "clamp(20px,2.5vw,28px)", color: "#fff", margin: "0 0 10px", letterSpacing: "0" }}>
                   برنامج الإحالة — اكسب مكافآت عن كل عميل تحيله
                 </h3>
-                <p style={{ fontFamily: "var(--font-sans)", fontSize: 15, color: "rgba(255,255,255,0.6)", margin: 0, lineHeight: 1.8, maxWidth: "56ch" }}>
+                <p style={{ fontFamily: "var(--font-sans)", fontSize: 15, color: "#C5DAE6", margin: 0, lineHeight: 1.8, maxWidth: "56ch" }}>
                   نطلق برنامج إحالة للمحترفين في قطاعات المساحة والهندسة. سجّل اهتمامك الآن وكن من أوائل المنضمين. خاضع للشروط النهائية للبرنامج عند الإطلاق.
                 </p>
               </div>
@@ -820,7 +816,7 @@ export default function ArHomePage() {
               <h2 style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "clamp(1.75rem,4vw,2.75rem)", color: "#fff", marginBottom: "1rem", letterSpacing: "-0.02em" }}>
                 هل أنت مستعد لتجهيز فريقك الميداني؟
               </h2>
-              <p style={{ fontFamily: "var(--font-sans)", fontSize: "var(--text-md)", color: "rgba(255,255,255,0.65)", marginBottom: "2.25rem", lineHeight: 1.65 }}>
+              <p style={{ fontFamily: "var(--font-sans)", fontSize: "var(--text-md)", color: "#CCDFE9", marginBottom: "2.25rem", lineHeight: 1.65 }}>
                 تصفح كتالوجنا الإلكتروني الرسمي أو تحدث مع فريقنا للحصول على توصية مخصصة بناءً على متطلبات مشروعك.
               </p>
               <div style={{ display: "flex", flexWrap: "wrap", gap: 14, justifyContent: "center" }}>
@@ -836,13 +832,13 @@ export default function ArHomePage() {
                 <Link
                   href="/ar/contact"
                   className="se-btn se-btn-outline"
-                  style={{ display: "inline-flex", alignItems: "center", gap: 8, padding: "14px 28px", background: "transparent", color: "#fff", fontWeight: 700, fontSize: 16, borderRadius: "var(--radius-md)", border: "1.5px solid rgba(255,255,255,0.4)", textDecoration: "none" }}
+                  style={{ display: "inline-flex", alignItems: "center", gap: 8, padding: "14px 28px", background: "transparent", color: "#fff", fontWeight: 700, fontSize: 16, borderRadius: "var(--radius-md)", border: "1.5px solid #A3C3D8", textDecoration: "none" }}
                 >
                   طلب استشارة
                 </Link>
                 <Link
                   href="/ar/referral-program"
-                  style={{ display: "inline-flex", alignItems: "center", gap: 8, padding: "14px 28px", background: "rgba(34,167,168,0.15)", color: "var(--se-teal)", fontWeight: 700, fontSize: 16, borderRadius: "var(--radius-md)", border: "1.5px solid rgba(34,167,168,0.4)", textDecoration: "none" }}
+                  style={{ display: "inline-flex", alignItems: "center", gap: 8, padding: "14px 28px", color: "var(--se-teal)", fontWeight: 700, fontSize: 16, borderRadius: "var(--radius-md)", border: "1.5px solid rgba(34,167,168,0.4)", textDecoration: "none" }}
                 >
                   <ArrowLeft size={16} /> اكسب مكافآت بإحالة عميل
                 </Link>
