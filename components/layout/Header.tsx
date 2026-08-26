@@ -181,7 +181,7 @@ export function Header() {
 
           {/* CTA buttons */}
           <div className="kit-desktop-only" style={{ display: "flex", alignItems: "center", gap: "0.6rem", flexShrink: 0 }}>
-            <a href="https://surveyingexperts-sa.com/collections/all" target="_blank" rel="noopener noreferrer"
+            <a href="https://store.surveyingexperts-sa.com" target="_blank" rel="noopener noreferrer"
               className="se-btn"
               style={{ display: "inline-flex", alignItems: "center", gap: 5, padding: "8px 14px", fontSize: 13, fontWeight: 600, color: "var(--se-blue)", border: "1.5px solid var(--se-blue)", borderRadius: "var(--radius-md)", textDecoration: "none", background: "transparent" }}>
               Store <ExternalLink size={12} />
@@ -227,7 +227,7 @@ export function Header() {
               ))}
             </div>
             <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem", marginTop: "0.75rem" }}>
-              <a href="https://surveyingexperts-sa.com/collections/all" target="_blank"
+              <a href="https://store.surveyingexperts-sa.com" target="_blank"
                 style={{ textAlign: "center", padding: "0.75rem", fontSize: 13, fontWeight: 600, color: "var(--se-blue)", border: "1.5px solid var(--se-blue)", borderRadius: "var(--radius-md)", textDecoration: "none" }}>
                 Online Store
               </a>

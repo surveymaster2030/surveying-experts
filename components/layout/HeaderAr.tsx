@@ -177,7 +177,7 @@ export function HeaderAr() {
 
           {/* CTA buttons */}
           <div className="kit-desktop-only" style={{ display: "flex", alignItems: "center", gap: "0.6rem", flexShrink: 0 }}>
-            <a href="https://surveyingexperts-sa.com/collections/all" target="_blank" rel="noopener noreferrer"
+            <a href="https://store.surveyingexperts-sa.com" target="_blank" rel="noopener noreferrer"
               style={{ display: "inline-flex", alignItems: "center", gap: 5, padding: "8px 14px", fontSize: 13, fontWeight: 600, color: "var(--se-blue)", border: "1.5px solid var(--se-blue)", borderRadius: "var(--radius-md)", textDecoration: "none", background: "transparent" }}>
               المتجر <ExternalLink size={12} />
             </a>
@@ -226,7 +226,7 @@ export function HeaderAr() {
               ))}
             </div>
             <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem", marginTop: "0.75rem" }}>
-              <a href="https://surveyingexperts-sa.com/collections/all" target="_blank" rel="noopener noreferrer"
+              <a href="https://store.surveyingexperts-sa.com" target="_blank" rel="noopener noreferrer"
                 style={{ textAlign: "center", padding: "0.75rem", fontSize: 13, fontWeight: 600, color: "var(--se-blue)", border: "1.5px solid var(--se-blue)", borderRadius: "var(--radius-md)", textDecoration: "none" }}>
                 المتجر الإلكتروني
               </a>
