@@ -39,6 +39,10 @@ const thmanyahSerif = localFont({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://www.surveyingexperts-sa.com'),
+  alternates: {
+    canonical: './',
+  },
   title: {
     default:
       "Professional Surveying Equipment and Complete Field Support in Saudi Arabia | Surveying Experts",
