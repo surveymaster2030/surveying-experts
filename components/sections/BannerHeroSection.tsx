@@ -12,7 +12,7 @@ const slides = [
     h1Line2: "Complete Field Support.",
     subtitle:
       "Professional surveying technologies from trusted global brands, backed by consultation, maintenance, calibration, and after-sales service across Saudi Arabia.",
-    ctaPrimary: { label: "Visit Online Store", href: "https://surveyingexperts-sa.com/collections/all", external: true },
+    ctaPrimary: { label: "Visit Online Store", href: "https://store.surveyingexperts-sa.com", external: true },
     ctaSecondary: { label: "Request Consultation", href: "/contact", external: false },
   },
   {
@@ -22,7 +22,7 @@ const slides = [
     h1Line2: "3D Scanning and More.",
     subtitle:
       "From RTK receivers to laser scanners, drones and GPR — a complete range of professional surveying equipment from globally trusted brands, available across all branches.",
-    ctaPrimary: { label: "Browse Equipment", href: "https://surveyingexperts-sa.com/collections/all", external: true },
+    ctaPrimary: { label: "Browse Equipment", href: "https://store.surveyingexperts-sa.com", external: true },
     ctaSecondary: { label: "Find Your Solution", href: "/solutions", external: false },
   },
   {

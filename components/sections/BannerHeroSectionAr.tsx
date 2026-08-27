@@ -12,7 +12,7 @@ const slides = [
     h1Line2: "ودعم ميداني متكامل.",
     subtitle:
       "تقنيات مساحة احترافية من علامات تجارية عالمية موثوقة، مدعومة بالاستشارة والصيانة والمعايرة وخدمات ما بعد البيع في جميع أنحاء المملكة.",
-    ctaPrimary: { label: "زيارة المتجر الإلكتروني", href: "https://surveyingexperts-sa.com/collections/all", external: true },
+    ctaPrimary: { label: "زيارة المتجر الإلكتروني", href: "https://store.surveyingexperts-sa.com", external: true },
     ctaSecondary: { label: "طلب استشارة", href: "/ar/contact", external: false },
   },
   {
@@ -22,7 +22,7 @@ const slides = [
     h1Line2: "مسح ثلاثي الأبعاد والمزيد.",
     subtitle:
       "من أجهزة RTK إلى الماسحات الضوئية، الطائرات المسيرة، وأجهزة الرادار الأرضي — مجموعة متكاملة من تقنيات المساحة الاحترافية من علامات تجارية عالمية موثوقة.",
-    ctaPrimary: { label: "تصفح المعدات", href: "https://surveyingexperts-sa.com/collections/all", external: true },
+    ctaPrimary: { label: "تصفح المعدات", href: "https://store.surveyingexperts-sa.com", external: true },
     ctaSecondary: { label: "ابحث عن حلك", href: "/ar/solutions", external: false },
   },
   {
