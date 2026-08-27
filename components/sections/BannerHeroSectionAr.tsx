@@ -14,7 +14,7 @@ const slides = [
       "تقنيات مساحة احترافية من علامات تجارية عالمية موثوقة، مدعومة بالاستشارة والصيانة والمعايرة وخدمات ما بعد البيع في جميع أنحاء المملكة.",
     ctaPrimary: { label: "زيارة المتجر الإلكتروني", href: "https://store.surveyingexperts-sa.com", external: true },
     ctaSecondary: { label: "طلب استشارة", href: "/ar/contact", external: false },
-  },
+  }, 
   {
     img: "/images/photos/gnss-ertk25.jpg",
     eyebrow: "مجموعة معدات احترافية",

@@ -68,7 +68,7 @@ export function BannerHeroSection() {
   }, [active, paused, next]);
 
   const slide = slides[active];
-
+ 
   return (
     <section
       style={{ position: "relative", overflow: "hidden", minHeight: 640, display: "flex", flexDirection: "column" }}
