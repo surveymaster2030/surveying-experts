@@ -1,0 +1,186 @@
+/* ===========================================================================
+   Surveying Experts — Spacing, radii, shadows, layout
+   8px base grid. Technical, generous spacing for premium B2B feel.
+   =========================================================================== */
+:root {
+  /* ---- Spacing scale (8px base) ---- */
+  --space-0: 0;
+  --space-1: 0.25rem;   /* 4 */
+  --space-2: 0.5rem;    /* 8 */
+  --space-3: 0.75rem;   /* 12 */
+  --space-4: 1rem;      /* 16 */
+  --space-5: 1.5rem;    /* 24 */
+  --space-6: 2rem;      /* 32 */
+  --space-7: 2.5rem;    /* 40 */
+  --space-8: 3rem;      /* 48 */
+  --space-9: 4rem;      /* 64 */
+  --space-10: 5rem;     /* 80 */
+  --space-12: 6rem;     /* 96 */
+  --space-16: 8rem;     /* 128 */
+
+  /* ---- Section / layout ---- */
+  --container-max: 1280px;
+  --container-pad: 1.5rem;
+  --section-py: 6rem;         /* desktop section padding */
+  --section-py-sm: 4rem;      /* mobile */
+
+  /* ---- Radii ---- */
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 8px;       /* buttons, inputs */
+  --radius-lg: 12px;      /* cards */
+  --radius-xl: 16px;      /* feature cards */
+  --radius-2xl: 24px;     /* large panels */
+  --radius-pill: 999px;   /* chips, eyebrows */
+
+  /* ---- Borders ---- */
+  --border-width: 1px;
+  --border-width-strong: 2px;
+
+  /* ---- Shadows — soft, cool-blue tinted, never heavy ---- */
+  --shadow-xs: 0 1px 2px rgba(36, 57, 73, 0.06);
+  --shadow-sm: 0 1px 3px rgba(36, 57, 73, 0.08), 0 1px 2px rgba(36, 57, 73, 0.04);
+  --shadow-md: 0 4px 12px rgba(36, 57, 73, 0.08), 0 2px 4px rgba(36, 57, 73, 0.04);
+  --shadow-lg: 0 12px 28px rgba(36, 57, 73, 0.12), 0 4px 8px rgba(36, 57, 73, 0.05);
+  --shadow-xl: 0 24px 48px rgba(36, 57, 73, 0.16);
+  --shadow-accent: 0 8px 24px rgba(246, 186, 59, 0.32);
+
+  /* ---- Motion ---- */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);      /* @kind other */
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);  /* @kind other */
+  --dur-fast: 150ms;    /* @kind other */
+  --dur-base: 200ms;    /* @kind other */
+  --dur-slow: 400ms;    /* @kind other */
+  --dur-reveal: 600ms;  /* @kind other */
+
+  /* ---- Technical background patterns (brand motif) ---- */
+  --grid-line: rgba(53, 79, 97, 0.05);
+  --grid-line-accent: rgba(246, 186, 59, 0.08);
+  --dot-color: rgba(53, 79, 97, 0.08);
+  --pattern-grid: linear-gradient(var(--grid-line) 1px, transparent 1px),
+                  linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+  --pattern-grid-size: 40px 40px;
+  --pattern-dot: radial-gradient(circle, var(--dot-color) 1px, transparent 1px);
+  --pattern-dot-size: 22px 22px;
+}
+
+/* ===========================================================================
+   Surveying Experts — Typography tokens
+   Display: Thmanyah Serif Text. UI/body: Thmanyah Sans.
+   =========================================================================== */
+:root {
+  /* ---- Families ----
+     English/Latin renders in IBM Plex; Arabic glyphs fall through to Thmanyah
+     (scoped via unicode-range in fonts.css). */
+  /* IBM Plex Sans for EN headings + body; Thmanyah Sans catches Arabic glyphs.
+     Thmanyah Serif Text retained as --font-serif for editorial use. */
+  --font-display: "IBM Plex Sans", "Thmanyah Sans", system-ui, sans-serif;
+  --font-sans:    "IBM Plex Sans", "Thmanyah Sans", system-ui, sans-serif;
+  --font-serif:   "Thmanyah Serif Text", Georgia, serif;
+  --font-mono: "IBM Plex Mono", "SFMono-Regular", ui-monospace, "Menlo", monospace;
+
+  /* ---- Weights ---- */
+  --fw-light: 300;    /* @kind font */
+  --fw-regular: 400;  /* @kind font */
+  --fw-medium: 500;   /* @kind font */
+  --fw-bold: 700;     /* @kind font */
+  --fw-black: 900;    /* @kind font */
+
+  /* ---- Type scale (1.250 major-third, 16px base) ---- */
+  --text-xs: 0.75rem;    /* 12 — labels, eyebrows */
+  --text-sm: 0.875rem;   /* 14 — UI, captions */
+  --text-base: 1rem;     /* 16 — body */
+  --text-md: 1.125rem;   /* 18 — lead body */
+  --text-lg: 1.25rem;    /* 20 */
+  --text-xl: 1.5rem;     /* 24 — H4 */
+  --text-2xl: 1.875rem;  /* 30 — H3 */
+  --text-3xl: 2.25rem;   /* 36 — H2 */
+  --text-4xl: 3rem;      /* 48 — H1 */
+  --text-5xl: 3.75rem;   /* 60 — hero display */
+  --text-6xl: 4.5rem;    /* 72 — XL display */
+
+  /* ---- Line heights ---- */
+  --leading-tight: 1.08;
+  --leading-snug: 1.25;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.65;
+
+  /* ---- Letter spacing ---- */
+  --tracking-tighter: -0.03em;  /* large display */
+  --tracking-tight: -0.015em;   /* headings */
+  --tracking-normal: 0;
+  --tracking-wide: 0.04em;
+  --tracking-widest: 0.18em;    /* uppercase eyebrows */
+}
+
+/* ===========================================================================
+   Surveying Experts — Color tokens
+   Brand palette: white, surveyor blue (#354f61), survey yellow (#f6ba3b).
+   Precision, trust, engineering quality, modern Saudi B2B.
+   =========================================================================== */
+:root {
+  /* ---- Brand: Blue (primary / "Surveyor Blue") ---- */
+  --se-blue: #354f61;          /* primary brand blue */
+  --se-blue-dark: #243949;     /* deep blue — hero/footer surfaces */
+  --se-blue-darker: #1a2b38;   /* near-black blue for max depth */
+  --se-blue-light: #4a6a7e;    /* hover / lighter blue */
+  --se-blue-soft: #eef2f4;     /* tinted surface / chip background */
+
+  /* ---- Brand: Yellow (accent / "Survey Yellow") ---- */
+  --se-yellow: #f6ba3b;        /* primary accent */
+  --se-yellow-dark: #e0a520;   /* accent hover / pressed */
+  --se-yellow-light: #fcd06a;  /* lighter accent */
+  --se-yellow-soft: #fdf3dd;   /* yellow tint surface */
+
+  /* ---- Neutrals (warm-cool gray ramp) ---- */
+  --se-white: #ffffff;
+  --se-gray-50: #f8f9fa;       /* page surface */
+  --se-gray-100: #f0f2f4;      /* darker surface / divider fill */
+  --se-gray-200: #e5e8eb;      /* borders */
+  --se-gray-300: #d2d7dc;      /* strong borders */
+  --se-gray-400: #9aa4ac;      /* disabled text / icons */
+  --se-gray-500: #6b757d;      /* muted text */
+  --se-gray-600: #4b555c;      /* secondary text */
+  --se-gray-700: #364046;      /* body strong */
+  --se-gray-800: #232a2f;      /* near-black text */
+
+  /* ---- Semantic status ---- */
+  --se-warning: #e0a520;
+  --se-warning-soft: #fdf3dd;
+  --se-info: #354f61;
+  --se-info-soft: #eef2f4;
+
+  /* =========================================================================
+     Semantic aliases — reference these in components, not raw values.
+     ========================================================================= */
+  --color-bg: var(--se-white);
+  --color-bg-subtle: var(--se-gray-50);
+  --color-bg-muted: var(--se-gray-100);
+  --color-bg-inverse: var(--se-blue-dark);
+
+  --surface-card: var(--se-white);
+  --surface-card-inverse: rgba(255, 255, 255, 0.06);
+  --surface-chip: var(--se-blue-soft);
+  --surface-accent-soft: var(--se-yellow-soft);
+
+  --text-strong: var(--se-blue-dark);   /* headings on light */
+  --text-body: var(--se-gray-700);      /* body copy */
+  --text-muted: var(--se-gray-500);     /* secondary / captions */
+  --text-on-dark: var(--se-white);
+  --text-on-dark-muted: rgba(255, 255, 255, 0.7);
+  --text-on-accent: var(--se-blue-dark);/* text on yellow */
+  --text-accent: var(--se-blue);        /* link / accent text on light */
+
+  --border-subtle: var(--se-gray-200);
+  --border-default: var(--se-gray-300);
+  --border-strong: var(--se-blue);
+  --border-on-dark: rgba(255, 255, 255, 0.14);
+
+  --accent: var(--se-yellow);
+  --accent-hover: var(--se-yellow-dark);
+  --accent-contrast: var(--se-blue-dark);
+
+
+  --focus-ring: rgba(53, 79, 97, 0.32);
+  --accent-ring: rgba(246, 186, 59, 0.45);
+}

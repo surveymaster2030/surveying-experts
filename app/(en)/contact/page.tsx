@@ -1,18 +1,4 @@
-import type { Metadata } from "next";
-import { ContactPageClient } from "@/components/sections/ContactPageClient";
-import { BranchesSection } from "@/components/sections/BranchesSection";
-
-export const metadata: Metadata = {
-  title: "Contact & Branches | Surveying Experts Saudi Arabia",
-  description:
-    "Get in touch with Surveying Experts and find our 5 branches across Saudi Arabia. Contact us for equipment inquiries, technical support, maintenance bookings, or consultations.",
-};
-
-export default function ContactPage() {
-  return (
-    <>
-      <ContactPageClient />
-      <BranchesSection />
-    </>
-  );
-}
+import {ContactPage} from '@/components/site/Pages';
+import {pageMeta} from '@/lib/site';
+export const metadata=pageMeta('en','Contact our team','Discuss your equipment or project with Surveying Experts.','/contact');
+export default async function Page({searchParams}:{searchParams:Promise<Record<string,string|string[]|undefined>>}){const query=await searchParams;const initial:Record<string,string>={};for(const key of ['intent','solution','branch','plan','service','sector']){const value=query[key];if(typeof value==='string')initial[key]=value;}return <ContactPage locale="en" initial={initial}/>;}

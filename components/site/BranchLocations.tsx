@@ -1,0 +1,11 @@
+'use client';
+import {useState} from 'react';
+import Link from 'next/link';
+import {MapPin,Phone,Clock,ArrowUpRight,ArrowRight,Wrench} from 'lucide-react';
+import {Locale,text,PHONE,enquiry} from '@/lib/site';
+import {branchLocations} from '@/lib/restored-content';
+
+export function BranchLocations({locale}:{locale:Locale}){
+ const [index,setIndex]=useState(0),ar=locale==='ar',active=branchLocations[index];
+ return <div id="branches" className="locations"><div className="location-tabs" role="group" aria-label={ar?'اختر الفرع':'Choose a branch'}>{branchLocations.map((b,i)=><button key={b.city.en} onClick={()=>setIndex(i)} aria-pressed={i===index}><MapPin size={16}/>{text(locale,b.city)}</button>)}</div><div className="location-grid"><div className="location-details"><span className="eyebrow">{text(locale,active.region)}</span><h3>{ar?'فرع '+active.city.ar:active.city.en+' branch'}</h3><div className="location-line"><MapPin/><div><strong>{ar?'العنوان':'Address'}</strong><p>{text(locale,active.address)}</p></div></div><div className="location-line"><Clock/><div><strong>{ar?'مواعيد العمل':'Opening hours'}</strong><p>{text(locale,active.hours)}</p></div></div><div className="location-line"><Phone/><div><strong>{ar?'تواصل مع الفريق':'Speak to the team'}</strong><a href={`tel:${PHONE}`}><bdi>+966 54 064 6245</bdi></a></div></div><div className="location-service"><Wrench size={18}/>{ar?'مبيعات · دعم فني · صيانة ومعايرة':'Sales · Technical support · Maintenance & calibration'}</div><div className="actions"><a className="button yellow" href={active.mapsUrl} target="_blank" rel="noopener noreferrer">{ar?'الاتجاهات على خرائط Google':'Directions on Google Maps'}<ArrowUpRight size={18}/></a><Link className="text-link" href={enquiry(locale,{branch:active.city.en,intent:'consultation'})}>{ar?'نسّق زيارتك':'Arrange your visit'}<ArrowRight size={18} className="direction-arrow"/></Link></div></div><div className="location-map"><iframe key={active.mapSrc} src={active.mapSrc} title={ar?'موقع فرع '+active.city.ar:active.city.en+' branch location'} loading="lazy" referrerPolicy="no-referrer-when-downgrade" allowFullScreen/><a href={active.mapsUrl} target="_blank" rel="noopener noreferrer"><MapPin size={16}/>{ar?'افتح موقع الفرع في الخرائط':'Open branch location in Maps'}<ArrowUpRight size={16}/></a></div></div></div>;
+}

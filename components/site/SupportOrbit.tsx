@@ -1,0 +1,14 @@
+import {MessageSquare,Search,Package,Settings,Headphones,Wrench,Crosshair,ShieldCheck} from 'lucide-react';
+import {Locale,text} from '@/lib/site';
+const supportJourney=[
+ {icon:MessageSquare,title:{ar:'الاستشارة',en:'Consultation'},body:{ar:'نفهم مشروعك وموقعك وميزانيتك قبل أن نوصي بأي شيء.',en:'We understand your project, site and budget before recommending equipment.'}},
+ {icon:Search,title:{ar:'اختيار المعدات',en:'Equipment selection'},body:{ar:'نساعدك في مقارنة التقنيات واختيار ما يناسب سير عملك.',en:'Compare technologies and choose what fits your workflow.'}},
+ {icon:Package,title:{ar:'توريد المعدات',en:'Equipment supply'},body:{ar:'عروض أسعار وتوفر الفروع ومتجرنا الإلكتروني الرسمي.',en:'Quotations, branch availability and our official online store.'}},
+ {icon:Settings,title:{ar:'الإعداد والتوجيه',en:'Setup & onboarding'},body:{ar:'نساعد فريقك على الإلمام بالجهاز الجديد قبل أول يوم في الميدان.',en:'Help your team get familiar with the instrument before its first field day.'}},
+ {icon:Headphones,title:{ar:'الدعم الميداني',en:'Field support'},body:{ar:'نجيب عن الأسئلة التقنية حين يكون الفريق في الموقع والعمل جارٍ.',en:'Technical guidance while your team is on site and work is underway.'}},
+ {icon:Wrench,title:{ar:'الصيانة',en:'Maintenance'},body:{ar:'فحص الجهاز وخدمته لحماية الأداء وإطالة عمره الافتراضي.',en:'Inspection and service to protect performance and extend instrument life.'}},
+ {icon:Crosshair,title:{ar:'المعايرة',en:'Calibration'},body:{ar:'قياس وفحص وضبط للحفاظ على دقة القراءات وموثوقيتها.',en:'Measurement, checks and adjustment for reliable instrument readings.'}},
+ {icon:ShieldCheck,title:{ar:'دعم ما بعد البيع',en:'After-sales care'},body:{ar:'نتابعك ونبقى في متناول يدك بعد كل عملية شراء.',en:'Ongoing follow-up and support after every purchase.'}},
+];
+
+export function SupportOrbit({locale}:{locale:Locale}) {const ar=locale==='ar';return <section className="section support-simple" id="support-360"><div className="wrap"><div className="support-simple-heading"><div><span className="eyebrow">{ar?'معك في كل خطوة':'WITH YOU AT EVERY STEP'}</span><h2>{ar?'جهازك معك.\nوإحنا معك.':'Your gear. Your goals.\nWe are right here.'}</h2><p>{ar?'من أول استشارة إلى الاستخدام الميداني طويل الأمد، نجمع المعرفة والمعدات والخدمة في علاقة مستمرة مع فريقك.':'From the first consultation to long-term field use, we connect knowledge, equipment and service in a continuing relationship with your team.'}</p></div><div className="support-stamp"><bdi>360°</bdi><span>{ar?'دعم يكمّل تجربتك':'SUPPORT THAT GOES FULL CIRCLE'}</span><svg viewBox="0 0 160 40" aria-hidden="true"><path d="M5 25Q65 2 148 18M137 6l14 13-18 12"/></svg></div></div><div className="support-simple-grid">{supportJourney.map(({icon:Icon,title,body},i)=><article key={i}><span className="support-simple-icon"><Icon size={25}/></span><h3>{text(locale,title)}</h3><p>{text(locale,body)}</p></article>)}</div></div></section>}
